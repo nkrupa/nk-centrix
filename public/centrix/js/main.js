@@ -39,6 +39,7 @@ var preloader = $('.preloader');
 var header = $('.header');
 var mobileBreakpoint = 992;
 
+console.log("IN MAIN JS");
 function setOverlay(cb) {
 	var overlay = $('<div class="overlay"></div>');
 	overlay.on('click', cb);
