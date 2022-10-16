@@ -13,8 +13,11 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
   <!-- CSS-->
-  <!-- <link rel="stylesheet" href="/centrix/css/bootstrap-grid.min.css"> -->
-  <link rel="stylesheet" href="/centrix/css/main.css">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+  <!-- <link rel="stylesheet" href="/centrix/css/main.css"> -->
   <title>Centrix | Blog Listing</title>
 </head>
 
