@@ -5,23 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <!--favicon-->
-  <link rel="apple-touch-icon" sizes="60x60" href="/centrix/favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/centrix/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/centrix/favicons/favicon-16x16.png">
-  <link rel="manifest" href="/centrix/favicons/site.webmanifest">
-  <link rel="mask-icon" href="/centrix/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+  <link rel="manifest" href="favicons/site.webmanifest">
+  <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
   <!-- CSS-->
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-  <%= javascript_importmap_tags %>
-  <!-- <link rel="stylesheet" href="/centrix/css/main.css"> -->
-  <title>Centrix | Blog Listing</title>
+  <link rel="stylesheet" href="/centrix/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="/centrix/css/main.css">
+  <title>Centrix | Vcard</title>
 </head>
 
-<body class="webpage">
+<body class="webpage webpage--bg-black">
   <div style="display: none">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <symbol id="link-arrow2" viewBox="0 0 24 23">
@@ -108,7 +105,7 @@
   <div class="animsition">
     <div class="leftward-wrapper">
       <div class="leftward-wrapper__image vcard-image __js_parallax">
-        <img src="/centrix/img/picture/vcard/vcard.jpg" width="1920" height="1824" alt="">
+        <img src="img/picture/vcard/vcard.jpg" width="1920" height="1824" alt="">
       </div>
       <div class="leftward-wrapper__container container container--size-large">
         <header class="header header--leftward header--absolute header--yellow">
@@ -575,7 +572,6 @@
       </div>
     </div>
   </div>
-
   <!-- Javascript libs-->
   <script src="/centrix/js/libs/jquery-3.5.1.min.js"></script>
   <script src="/centrix/js/libs/jquery.fancybox.min.js"></script>
