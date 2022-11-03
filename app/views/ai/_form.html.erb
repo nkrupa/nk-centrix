@@ -1,0 +1,12 @@
+  <%= form_with model: current_request, url: ai_path do |f| %>
+    <%= f.text_field :query, required: true, value: current_request.query %><%= f.submit ">" %>
+  <% end -%>
+
+  <% if current_request.response.any? %>
+  <div class="alert alert-info fw-bold mt-4">
+    <%= current_request.response_text.gsub("/n","<br>") %>
+  </div>
+  <div class="small mt-3 pre">
+    <pre><%= JSON.pretty_generate current_request.response %></pre>
+  </div>
+  <% end -%>
