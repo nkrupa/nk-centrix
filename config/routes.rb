@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resource :ai, controller: :ai
 
   # Defines the root path route ("/")
-  root "pages#home"
+  root "ai#show"
 end
