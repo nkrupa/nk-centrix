@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_03_140720) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_03_151025) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_03_140720) do
     t.integer "tokens"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "response_seconds", default: 0
   end
 
 end

@@ -1,5 +1,11 @@
-  <%= form_with model: current_request, url: ai_path, method: :post do |f| %>
-    <%= f.text_field :query, required: true, value: current_request.query %><%= f.submit ">" %>
+  <%= bootstrap_form_with model: current_request, url: ai_path, method: :post, layout: :inline do |f| %>
+    <div class="input-group">
+      <%= f.text_field :query, required: true, hide_label: true, autofocus: true, input_group_class: 'input-group-lg', value: current_request.query %>
+      <div class="d-flex">
+        <%= f.submit ">>", input_group_class: 'btn btn-primary' %> 
+        <%= link_to "Clear", ai_path, class: "text-small text-muted" %>
+    </div>
+    </div>
   <% end -%>
 
   <% if current_request.response.any? %>

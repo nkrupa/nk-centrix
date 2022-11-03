@@ -6,12 +6,14 @@ class AiController < ApplicationController
   end
 
   def create
-    current_request.query = form_params[:query]
-    current_request.response = mock_r#OpenAiClient.new.question(@query)
+    start_time = Time.current
+
+    current_request.query = query
+    current_request.response = OpenAiClient.new.question(query)
+    current_request.response_seconds = Time.current - start_time
     current_request.parse_response
     current_request.save!
 
-# raise "current_request: #{current_request}"
     render turbo_stream: turbo_stream.update(:interaction, partial: "ai/form", current_request: current_request)
   end
 
@@ -31,6 +33,12 @@ class AiController < ApplicationController
 
   def current_request
     @current_request ||= Ai::Request.new(session_id: session.id)
+  end
+
+  private
+
+  def query
+    form_params[:query]
   end
 
   def form_params
