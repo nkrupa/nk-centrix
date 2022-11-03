@@ -14,7 +14,7 @@ class Ai::Request < ApplicationRecord
       {"prompt_tokens"=>7, "completion_tokens"=>10, "total_tokens"=>17}}
 
 
-    response_text = self.response["choices"].map{|choice| choice["text"]}.join("\n")
-    tokens = self.response["usage"]["total_tokens"]
+    self.response_text = self.response["choices"].map{|choice| choice["text"]}.join("\n")
+    self.tokens = self.response["usage"]["total_tokens"]
   end
 end

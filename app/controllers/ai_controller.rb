@@ -12,7 +12,7 @@ class AiController < ApplicationController
     current_request.save!
 
 # raise "current_request: #{current_request}"
-    render turbo_stream: turbo_stream.update("foo", partial: "ai/form")
+    render turbo_stream: turbo_stream.update(:interaction, partial: "ai/form", current_request: current_request)
   end
 
   def mock_r
