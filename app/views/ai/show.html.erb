@@ -1,1 +1,15 @@
-Hi
+<h1 class="h5">Ask AI</h1>
+<%= turbo_frame_tag :interaction do %>
+  <%= form_with do |f| %>
+    <%= f.text_field :query, required: true, value: @query %><%= f.submit ">" %>
+  <% end -%>
+
+  <% if @response %>
+  <div class="alert alert-info fw-bold mt-4">
+    <%= @response["choices"].map{|x| x["text"]}.join("<br>") %>
+  </div>
+  <div class="small mt-3 pre">
+    <pre><%= JSON.pretty_generate @response %></pre>
+  </div>
+  <% end -%>
+<% end -%>
