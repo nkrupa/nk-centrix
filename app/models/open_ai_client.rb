@@ -13,6 +13,7 @@ class OpenAiClient
     response = client.completions(
       parameters: {
           model: "text-davinci-001",
+          max_tokens: 400,
           prompt: q
      })
   end
