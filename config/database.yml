@@ -15,6 +15,11 @@ development:
   <<: *default
   database: workingdev-development
 
+test:
+  <<: *default
+  database: workingdev-test
+
+
 production:
   <<: *default
   database: workingdev-production
