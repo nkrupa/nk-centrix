@@ -10,7 +10,7 @@ RSpec.describe Ai::Request, type: :model do
 
     it "trims leading text" do
       original = ".\n\n\n\nAI:\n\nJacksonville is"
-      expect(subject.parse_text(original)).to eq("Jacksonville is") 
+      expect(subject.parse_text(original)).to eq(".\n\n\n\nJacksonville is") 
     end
 
   end

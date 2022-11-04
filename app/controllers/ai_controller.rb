@@ -1,6 +1,10 @@
 class AiController < ApplicationController
   helper_method :current_request
 
+  def index
+    @current_requests = Ai::Request.order(created_at: :desc)
+  end
+
   def show
   end
 

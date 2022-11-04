@@ -1,0 +1,17 @@
+Hi
+
+<% current_requests.each do |r| %>
+<div class="card mb-4">
+  <div class="card-header d-flex justify-content-between">
+    <%= r.class %>
+    <div><%= l r.created_at %></div>      
+  </div>
+  <div class="card-body row">
+    <div class="col-6">
+      <%= r.query %>
+        
+    </div>
+    <div class="col-6"><%= r.response_text %></div>
+  </div>
+</div>
+<% end -%>
