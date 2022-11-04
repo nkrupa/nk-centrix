@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_03_151025) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_04_015718) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
+
+  create_table "ai_request_threads", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "session_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "ai_requests", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "type"
@@ -25,6 +31,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_03_151025) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "response_seconds", default: 0
+    t.uuid "ai_request_thread_id_id"
+    t.index ["ai_request_thread_id_id"], name: "index_ai_requests_on_ai_request_thread_id_id"
   end
 
+  add_foreign_key "ai_requests", "ai_request_threads", column: "ai_request_thread_id_id"
 end
