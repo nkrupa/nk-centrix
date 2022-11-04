@@ -9,6 +9,11 @@ DEBUG TEST:
 </div>
 
 <div class="mb-4">
-  <div>Full Prompt:</div>
+  <div>Full Request Prompt:</div>
   <div class="text-monospaced"><%= current_request.full_prompt %></div>
+</div>
+
+<div class="mb-4">
+  <div>Full Thread:</div>
+  <div class="text-monospaced"><%= current_request.thread.full_text %></div>
 </div>
