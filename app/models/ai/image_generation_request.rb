@@ -3,8 +3,16 @@ class Ai::ImageGenerationRequest < Ai::Request
 
   def generate!(prompt)
     client = OpenAiClient.new(session_id: session_id)
-    response = client.generate_image!(prompt)
-    self.images.create!(request: self, base64: response["data"]["b64_json"])
+    update!(
+      query: prompt,
+      full_prompt: prompt
+    )
+    self.response = client.generate_image!(prompt)
+
+    # request.parse_response
+    save!
+
+    self.images.create!(request: self, base64: response["data"][0]["b64_json"])
   end
 
 end

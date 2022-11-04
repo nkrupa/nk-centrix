@@ -1,0 +1,10 @@
+  <%= bootstrap_form_with model: Ai::ImageGenerationRequest.new, url: ai_image_requests_path, method: :post, layout: :inline do |f| %>
+    <div class="input-group">
+      <%= f.text_field :query, required: true, hide_label: true, autofocus: true, autocomplete: "off", input_group_class: 'input-group-lg' %>
+      <div class="d-flex">
+        <%= f.submit ">>", class: 'btn btn-primary btn-lg' %> 
+      </div>
+    </div>
+  <% end -%>
+        <%= link_to "Clear", ai_path, class: "text-small text-muted" %>
+

@@ -1,7 +1,7 @@
 Hi
 
 <% current_requests.each do |r| %>
-<div class="card mb-4">
+<div class="card mb-4" data-id="<%= r.id %>">
   <div class="card-header d-flex justify-content-between">
     <%= r.class %>
     <div><%= l r.created_at %></div>      
@@ -9,9 +9,14 @@ Hi
   <div class="card-body row">
     <div class="col-6">
       <%= r.query %>
-        
     </div>
-    <div class="col-6"><%= r.response_text %></div>
+    <div class="col-6">
+      <% if r.is_a?(Ai::ImageGenerationRequest) and r.images.first %>
+        <div class="img-responsive"><%= render_generated_image(r.images.first) %></div>
+      <% else %>
+        <%= r.response_text %>
+      <% end -%>
+    </div>
   </div>
 </div>
 <% end -%>

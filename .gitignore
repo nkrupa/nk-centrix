@@ -36,4 +36,5 @@
 
 /config/credentials/development.key
 app/views/.DS_Store
-*.DS_Store
+.DS_Store
+*/.DS_Store

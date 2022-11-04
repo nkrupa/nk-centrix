@@ -1,0 +1,12 @@
+<h1 class="h4">Image Generation Request</h1>
+
+<% if current_request.images.any? %>
+  <% current_request.images.each do |image| %>
+    <%= render_generated_image(image) %>
+  <% end -%>
+<% end -%>
+
+<%= turbo_frame_tag :interaction do %>
+  <%= render "ai/image_requests/form" %>
+<% end -%>
+

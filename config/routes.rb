@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :request_threads do 
       resources :threaded_requests, only: [:new, :create], controller: "request_threads/threaded_requests"
     end
+    resources :image_requests, controller: "image_requests"
     resources :threaded_requests, only: [:show], controller: "threaded_requests" do 
       member do
         get :debug
