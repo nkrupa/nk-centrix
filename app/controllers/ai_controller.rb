@@ -9,7 +9,7 @@ class AiController < ApplicationController
     start_time = Time.current
 
     current_request.query = query
-    current_request.response = OpenAiClient.new.question(query)
+    current_request.response = ai_client.question(query)
     current_request.response_seconds = Time.current - start_time
     current_request.parse_response
     current_request.save!
@@ -39,6 +39,10 @@ class AiController < ApplicationController
 
   def query
     form_params[:query]
+  end
+
+  def ai_client
+    @ai_client ||= OpenAiClient.new(session_id: session.id)
   end
 
   def form_params

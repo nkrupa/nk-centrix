@@ -1,6 +1,7 @@
 class OpenAiClient
 
-  def initialize(client: nil)
+  def initialize(session_id: nil, client: nil)
+    @session_id = session_id
     @client = client
   end
 
@@ -14,7 +15,8 @@ class OpenAiClient
       parameters: {
           model: "text-davinci-001",
           max_tokens: 400,
-          prompt: q
+          prompt: q,
+          user: user_id
      })
   end
 
@@ -41,9 +43,10 @@ class OpenAiClient
     prompt
   end
 
-
+  attr_reader :session_id
+  
   def user_id
-    @user_id ||= [Rails.env, SecureRandom.uuid].join("-")
+    @user_id ||= [Rails.env, session_id || SecureRandom.uuid].join("-")
   end
 
   def client

@@ -2,11 +2,11 @@
     <div class="input-group">
       <%= f.text_field :query, required: true, hide_label: true, autofocus: true, input_group_class: 'input-group-lg', value: current_request.query %>
       <div class="d-flex">
-        <%= f.submit ">>", input_group_class: 'btn btn-primary' %> 
-        <%= link_to "Clear", ai_path, class: "text-small text-muted" %>
-    </div>
+        <%= f.submit ">>", class: 'btn btn-primary btn-lg' %> 
+      </div>
     </div>
   <% end -%>
+        <%= link_to "Clear", ai_path, class: "text-small text-muted" %>
 
   <% if current_request.response.any? %>
   <div class="alert alert-info fw-bold mt-4">
