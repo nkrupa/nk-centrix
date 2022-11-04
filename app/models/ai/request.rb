@@ -19,9 +19,9 @@ class Ai::Request < ApplicationRecord
   end
 
   def parse_text(original)
-    matches = original.match(/AI:\s*(.*)/)
-    pp matches
-    return matches[1] if matches
-    original
+    parsed = original.gsub(/^.*AI:\s*/,"")
+    # pp matches
+    # return matches[1] if matches
+    # original
   end
 end

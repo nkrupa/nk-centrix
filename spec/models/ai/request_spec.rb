@@ -12,5 +12,6 @@ RSpec.describe Ai::Request, type: :model do
       original = ".\n\n\n\nAI:\n\nJacksonville is"
       expect(subject.parse_text(original)).to eq("Jacksonville is") 
     end
+
   end
 end

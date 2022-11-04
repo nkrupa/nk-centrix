@@ -1,6 +1,6 @@
 <%= bootstrap_form_with model: Ai::ThreadedRequest.new, url: ai_request_thread_threaded_requests_path(current_thread), method: :post, layout: :inline do |f| %>
   <div class="input-group">
-    <%= f.text_field :query, required: true, hide_label: true, autofocus: true, input_group_class: 'input-group-lg' %>
+    <%= f.text_field :query, required: true, hide_label: true, autocomplete: "off", autofocus: true, input_group_class: 'input-group-lg' %>
     <div class="d-flex">
       <%= f.submit ">>", class: 'btn btn-primary btn-lg' %> 
     </div>
