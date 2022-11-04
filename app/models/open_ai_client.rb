@@ -47,6 +47,23 @@ class OpenAiClient
     )
   end
 
+  def generate_image!(prompt)
+    body = {
+      "prompt" => prompt,
+      "n" => 1,
+      "size" => "256x256",
+      "response_format" => "b64_json"
+    }
+    response = Faraday.post(
+      "https://api.openai.com/v1/images/generations",
+      body.to_json,
+      { "Content-Type" => "application/json",
+        "Authorization" => "Bearer #{api_token}" },
+    )
+    JSON.parse(response.body)
+
+  end
+
 
   # Utilities
   def format_question(prompt)
@@ -63,7 +80,11 @@ class OpenAiClient
     @user_id ||= [Rails.env, session_id || SecureRandom.uuid].join("-")
   end
 
+  def api_token
+    Rails.application.credentials.openai[:token]
+  end
+
   def client
-    @client ||= OpenAI::Client.new(access_token: Rails.application.credentials.openai[:token])
+    @client ||= OpenAI::Client.new(access_token: api_token)
   end
 end

@@ -1,4 +1,5 @@
 class Ai::Request < ApplicationRecord
+  validates :session_id, presence: true
 
   def parse_response
     {"id"=>"cmpl-68Tp56RPFVB26Y5Xv41KwdQCeAYHj",
