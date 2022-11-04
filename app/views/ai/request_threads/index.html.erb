@@ -1,0 +1,12 @@
+
+<div class="row">
+<% current_threads.each do |thread| %>
+  <div class="col-12 col-lg-4 card">
+    <%= link_to ai_request_thread_path(thread) do  %>
+      <div class="card-body">
+        <%= thread.full_text %>
+      </div>
+    <% end -%>
+  </div>
+<% end -%>
+</div>

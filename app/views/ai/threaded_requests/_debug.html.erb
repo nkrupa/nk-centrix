@@ -1,0 +1,14 @@
+DEBUG TEST:
+
+<div class="mb-3"><strong>QUERY:</strong> <%= current_request.query %></div>
+<div class="mb-3"><strong>RESPONSE:</strong> <%= current_request.response_text %></div>
+
+<div class="mb-4">
+  <div>Full Response:</div>
+  <pre><%= JSON.pretty_generate current_request.response %></pre>
+</div>
+
+<div class="mb-4">
+  <div>Full Prompt:</div>
+  <div class="text-monospaced"><%= current_request.full_prompt %></div>
+</div>

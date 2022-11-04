@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-lg-8">
+    <div class="card mb-4">
+      <div class="card-body">
+        <% current_thread.requests.each do |r| %>
+          <div class="mb-3">
+            <div class="text-end"><%= r.query %></div>
+            <div class="text-start"><%= r.response_text %></div>
+            <div class="text-end my-2"><%= link_to "Debug", debug_ai_threaded_request_path(r), class: "small text-muted" %></div>
+          </div>
+        <% end -%>    
+        </div>        
+      </div>
+  </div>
+  <div class="col-lg-4 bg-light">
+    <%= turbo_frame_tag :thread_debug do %>
+    <% end -%>
+  </div>
+</div>

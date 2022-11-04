@@ -7,4 +7,15 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "ai#show"
+
+  namespace :ai do
+    resources :request_threads do 
+      resources :threaded_requests, only: [:new, :create], controller: "request_threads/threaded_requests"
+    end
+    resources :threaded_requests, only: [:show], controller: "threaded_requests" do 
+      member do
+        get :debug
+      end
+    end
+  end
 end
