@@ -13,8 +13,15 @@ class Ai::Request < ApplicationRecord
      "usage"=>
       {"prompt_tokens"=>7, "completion_tokens"=>10, "total_tokens"=>17}}
 
-
-    self.response_text = self.response["choices"].map{|choice| choice["text"]}.join("\n")
+    original = self.response["choices"].map{|choice| choice["text"]}.join(" ")
+    self.response_text = parse_text(original)
     self.tokens_used = self.response["usage"]["total_tokens"].to_i
+  end
+
+  def parse_text(original)
+    matches = original.match(/AI:\s*(.*)/)
+    pp matches
+    return matches[1] if matches
+    original
   end
 end

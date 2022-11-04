@@ -18,7 +18,7 @@ class Ai::RequestThread < ApplicationRecord
     request.save!
 
     # conversation = [prompt, "\nAI: ", request.response_text].join("")
-    conversation = [prompt, "\n", request.response_text].join("")
+    conversation = [prompt, "\nAI:", request.response_text].join("")
     update!(full_text: conversation)
     puts "A) #{request.response_text}"
     return request
@@ -26,8 +26,12 @@ class Ai::RequestThread < ApplicationRecord
 
   def default_prefix
     "The following is a conversation with an AI assistant. " +
-    "The assistant is helpful, creative, clever, and very friendly.\n" +
-    "\nHuman: Hello, who are you?\nAI: I am an AI created by OpenAI. How can I help you today?\n"
+    "The assistant is clever, and friendly.\n" +
+    "Human: Hello, who are you?\nAI: I am an AI created by OpenAI. How can I help you today?\n"
+
+    # "The following is a conversation with an AI assistant. " +
+    # "The assistant is helpful, creative, clever, and very friendly.\n" +
+    # "\nHuman: Hello, who are you?\nAI: I am an AI created by OpenAI. How can I help you today?\n"
   end
 
 end
