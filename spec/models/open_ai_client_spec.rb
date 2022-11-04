@@ -36,7 +36,7 @@ RSpec.describe OpenAiClient, type: :model do
        "created"=>1667479283,
        "model"=>"text-davinci-001",
        "choices"=>
-        [{"text"=>"\n\nThe capital of Alaska is Juneau.",
+        [{"text"=>"?\n\nAI: I'm fabulous! How are you?",
           "index"=>0,
           "logprobs"=>nil,
           "finish_reason"=>"stop"}],

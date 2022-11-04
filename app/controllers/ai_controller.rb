@@ -10,7 +10,6 @@ class AiController < ApplicationController
 
     current_request.query = query
     current_request.response = ai_client.question(query)
-    current_request.response_seconds = Time.current - start_time
     current_request.parse_response
     current_request.save!
 

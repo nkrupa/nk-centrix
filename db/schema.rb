@@ -17,6 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_04_015718) do
 
   create_table "ai_request_threads", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "session_id"
+    t.text "full_text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -24,16 +25,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_04_015718) do
   create_table "ai_requests", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "type"
     t.uuid "session_id"
-    t.jsonb "query"
+    t.text "query"
+    t.text "full_prompt"
     t.jsonb "response", default: {}
     t.text "response_text"
-    t.integer "tokens"
+    t.integer "tokens_used"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "response_seconds", default: 0
-    t.uuid "ai_request_thread_id_id"
-    t.index ["ai_request_thread_id_id"], name: "index_ai_requests_on_ai_request_thread_id_id"
+    t.uuid "ai_request_thread_id"
+    t.index ["ai_request_thread_id"], name: "index_ai_requests_on_ai_request_thread_id"
   end
 
-  add_foreign_key "ai_requests", "ai_request_threads", column: "ai_request_thread_id_id"
+  add_foreign_key "ai_requests", "ai_request_threads"
 end

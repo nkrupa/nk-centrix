@@ -15,6 +15,6 @@ class Ai::Request < ApplicationRecord
 
 
     self.response_text = self.response["choices"].map{|choice| choice["text"]}.join("\n")
-    self.tokens = self.response["usage"]["total_tokens"]
+    self.tokens_used = self.response["usage"]["total_tokens"].to_i
   end
 end
