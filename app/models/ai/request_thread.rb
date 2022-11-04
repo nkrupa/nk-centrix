@@ -17,7 +17,7 @@ class Ai::RequestThread < ApplicationRecord
     request.parse_response
     request.save!
 
-    conversation = [prompt, "\nAI: ", request.response_text]
+    conversation = [prompt, "\nAI: ", request.response_text].join("")
     update!(full_text: conversation)
     puts "A) #{request.response_text}"
   end
