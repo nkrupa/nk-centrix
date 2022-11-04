@@ -1,0 +1,7 @@
+<%= turbo_stream.replace "new_query" do %>
+  <%= render partial: "ai/request_threads/form" %>
+<% end %>
+
+<%= turbo_stream.append "requests" do %>
+  <%= render "ai/request_threads/request", r: @current_request %> 
+<% end %>

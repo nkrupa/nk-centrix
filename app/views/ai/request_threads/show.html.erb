@@ -1,16 +1,20 @@
+<%= link_to "< Threads", ai_request_threads_path %>
 <div class="row">
   <div class="col-lg-8">
     <div class="card mb-4">
       <div class="card-body">
-        <% current_thread.requests.each do |r| %>
-          <div class="mb-3">
-            <div class="text-end fw-bold"><%= r.query %></div>
-            <div class="text-start mt-2 fst-italic"><%= r.response_text %></div>
-            <div class="text-end my-2"><%= link_to "Debug", debug_ai_threaded_request_path(r), class: "small text-muted" %></div>
-          </div>
-        <% end -%>    
-        </div>        
-      </div>
+        <%= turbo_frame_tag :requests do %>
+          <% current_thread.requests.each do |r| %>
+            <%= render "ai/request_threads/request", r: r %>  
+          <% end -%>    
+        <% end -%>
+      </div>        
+    </div>
+
+    <%= turbo_frame_tag :new_query do %>
+      <%= render "ai/request_threads/form" %>
+    <% end -%>
+
   </div>
   <div class="col-lg-4 bg-light">
     <%= turbo_frame_tag :thread_debug do %>

@@ -2,7 +2,6 @@ class AiController < ApplicationController
   helper_method :current_request
 
   def show
-
   end
 
   def create
@@ -14,20 +13,6 @@ class AiController < ApplicationController
     current_request.save!
 
     render turbo_stream: turbo_stream.update(:interaction, partial: "ai/form", current_request: current_request)
-  end
-
-  def mock_r
-{"id"=>"cmpl-68Tp56RPFVB26Y5Xv41KwdQCeAYHj",
-     "object"=>"text_completion",
-     "created"=>1667479283,
-     "model"=>"text-davinci-001",
-     "choices"=>
-      [{"text"=>"\n\nThe capital of Alaska is Juneau.",
-        "index"=>0,
-        "logprobs"=>nil,
-        "finish_reason"=>"stop"}],
-     "usage"=>
-      {"prompt_tokens"=>7, "completion_tokens"=>10, "total_tokens"=>17}}
   end
 
   def current_request

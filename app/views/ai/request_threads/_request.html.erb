@@ -1,0 +1,5 @@
+  <div class="mb-3">
+    <div class="text-end fw-bold"><%= r.query %></div>
+    <div class="text-start mt-2 fst-italic"><%= r.response_text %></div>
+    <div class="text-end my-2"><%= link_to "Debug", debug_ai_threaded_request_path(r), class: "small text-muted" %></div>
+  </div>

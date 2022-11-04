@@ -1,5 +1,5 @@
-
-<div class="row">
+<%= button_to "New", ai_request_threads_path, method: :post, class: "btn btn-lg btn-primary" %>
+<div class="row mt-3">
 <% current_threads.each do |thread| %>
   <div class="col-12 col-lg-4 card">
     <%= link_to ai_request_thread_path(thread) do  %>

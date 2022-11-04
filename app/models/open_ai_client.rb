@@ -31,14 +31,11 @@ class OpenAiClient
 #   stop=[" Human:", " AI:"]
 # )
 
-  def chat(new_prompt, prefix: nil)
-    prefix ||= "The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.\n" +
-      "\nHuman: Hello, who are you?\nAI: I am an AI created by OpenAI. How can I help you today?\nHuman: "
-
+  def chat(prompt)
     response = client.completions(
       parameters: {
         model: "text-davinci-002",
-        prompt: [prefix, new_prompt].join(" "),
+        prompt: prompt,
         temperature: 0.9,
         max_tokens: 200,
         top_p: 1,

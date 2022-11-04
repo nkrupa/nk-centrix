@@ -3,7 +3,7 @@ class Ai::RequestThread < ApplicationRecord
 
   validates :session_id, presence: true
 
-  def add_thread!(text)
+  def add!(text)
     client = OpenAiClient.new(session_id: session_id)
     prefix = full_text || default_prefix
     prompt = [prefix, "\nHuman: ", text].join("")
@@ -20,6 +20,7 @@ class Ai::RequestThread < ApplicationRecord
     conversation = [prompt, "\nAI: ", request.response_text].join("")
     update!(full_text: conversation)
     puts "A) #{request.response_text}"
+    return request
   end
 
   def default_prefix

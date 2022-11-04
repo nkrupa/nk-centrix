@@ -45,7 +45,7 @@ RSpec.describe OpenAiClient, type: :model do
     end
 
     specify do
-      expect(subject.chat("What is your name?")).to eq({})
+      expect(subject.chat("What is your name?")).to eq(completions_response)
     end
   end
 

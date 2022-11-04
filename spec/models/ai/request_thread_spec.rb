@@ -27,12 +27,12 @@ RSpec.describe Ai::RequestThread, type: :model do
     allow(OpenAiClient).to receive(:new).and_return(client)
   end
 
-  describe '#add_thread!' do 
+  describe '#add!' do 
     subject { Ai::RequestThread.create!(session_id: SecureRandom.uuid) }
 
     context "when none exist" do
       it "adds the expected request" do
-        expect { subject.add_thread!("Hi!") }.to change(subject.requests, :count).by(1)
+        expect { subject.add!("Hi!") }.to change(subject.requests, :count).by(1)
 
         created_request = subject.requests.last
         puts subject.inspect
@@ -71,7 +71,7 @@ RSpec.describe Ai::RequestThread, type: :model do
       it "appends as expected" do
         puts subject.inspect
         expect(subject.requests.count).to eq(1)
-        expect { subject.add_thread!("I'm doing so well!") }.to change(subject.requests, :count).by(1)
+        expect { subject.add!("I'm doing so well!") }.to change(subject.requests, :count).by(1)
         created_request = subject.requests.order(:created_at).last
         pp created_request
       end
