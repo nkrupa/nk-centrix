@@ -12,7 +12,9 @@ class Ai::ImageGenerationRequest < Ai::Request
     # request.parse_response
     save!
 
-    self.images.create!(request: self, base64: response["data"][0]["b64_json"])
+    response["data"].each do |image_node|
+      self.images.create!(request: self, base64: image_node["b64_json"])
+    end
   end
 
 end

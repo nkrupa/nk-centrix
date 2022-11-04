@@ -1,12 +1,18 @@
-<h1 class="h4">Image Generation Request</h1>
+<h1 class="h4">Generated Image</h1>
 
 <% if current_request.images.any? %>
+<div class="mb-5 d-flex">
   <% current_request.images.each do |image| %>
-    <%= render_generated_image(image) %>
+    <div class="img-responsive me-4"><%= render_generated_image(image) %></div>
   <% end -%>
+</div>
 <% end -%>
 
-<%= turbo_frame_tag :interaction do %>
-  <%= render "ai/image_requests/form" %>
-<% end -%>
+<%= render "ai/image_requests/form" %>
 
+<% if current_request %>
+<div class="mt-5 card card-body bg-light">
+  <pre><%= JSON.pretty_generate current_request.query %></pre>
+  <pre><%= JSON.pretty_generate current_request.response %></pre>
+</div>
+<% end -%>

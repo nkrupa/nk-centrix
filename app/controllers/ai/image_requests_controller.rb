@@ -9,7 +9,6 @@ class Ai::ImageRequestsController < ApplicationController
     current_request.save!
     current_request.generate!(query)
     redirect_to ai_image_request_path(current_request)
-    # @current_request = current_request.add!(query)
   end
 
   def show

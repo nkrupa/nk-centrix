@@ -50,7 +50,7 @@ class OpenAiClient
   def generate_image!(prompt)
     body = {
       "prompt" => prompt,
-      "n" => 1,
+      "n" => 2,
       "size" => "256x256",
       "response_format" => "b64_json"
     }
