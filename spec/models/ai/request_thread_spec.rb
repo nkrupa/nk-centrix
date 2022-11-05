@@ -43,6 +43,7 @@ RSpec.describe Ai::RequestThread, type: :model do
       let!(:prior_thread) do 
         subject.requests.create!(
          query: "Hi!",
+         session_id: subject.session_id,
          full_prompt:
           "The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.\n" +
           "\n" +
@@ -69,11 +70,9 @@ RSpec.describe Ai::RequestThread, type: :model do
       end
 
       it "appends as expected" do
-        puts subject.inspect
         expect(subject.requests.count).to eq(1)
         expect { subject.add!("I'm doing so well!") }.to change(subject.requests, :count).by(1)
         created_request = subject.requests.order(:created_at).last
-        pp created_request
       end
     end
 
