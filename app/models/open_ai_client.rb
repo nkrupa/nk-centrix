@@ -52,6 +52,7 @@ class OpenAiClient
       "prompt" => prompt,
       "n" => 2,
       "size" => "256x256",
+      "user" => user_id,
       "response_format" => "b64_json"
     }
     response = Faraday.post(

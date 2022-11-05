@@ -10,6 +10,7 @@ class Ai::RequestThread < ApplicationRecord
 
     request = self.requests.create!(
       thread: self,
+      session_id: session_id || thread.session_id,
       query: text,
       full_prompt: prompt
     )
