@@ -9,43 +9,18 @@ class OpenAiClient
     client.models.list
   end
 
-  def question(prompt)
-    q = format_question(prompt)
-    response = client.completions(
+  def chat(prompt, messages: [])
+    messages.push({ role: "user", content: prompt })
+    response = client.chat(
       parameters: {
-          model: "text-davinci-001",
-          max_tokens: 400,
-          prompt: q,
-          user: user_id
-     })
-  end
-
-  def chat(prompt)
-    response = client.completions(
-      parameters: {
-        model: "text-davinci-002",
-        prompt: prompt,
-        temperature: 0.9,
-        max_tokens: 200,
-        top_p: 1,
-        frequency_penalty: 0,
-        presence_penalty: 0.6,
-        stop: [" Human:", " AI:"]
+          model: "gpt-3.5-turbo", # Required.
+          messages: messages,#[{ role: "user", content: "Hello!"}], # Required.
+          temperature: 0.7,
       })
+    pp response
   end
 
   # Commands
-
-  def fix_spelling(text)
-    response = client.edits(
-        parameters: {
-            model: "text-davinci-edit-001",
-            input: text,
-            instruction: "Fix the spelling mistakes",
-            user: user_id
-        }
-    )
-  end
 
   def generate_image!(prompt)
     body = {

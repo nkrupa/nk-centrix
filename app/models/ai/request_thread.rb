@@ -3,36 +3,30 @@ class Ai::RequestThread < ApplicationRecord
 
   validates :session_id, presence: true
 
+  def first_prompt
+    messages.first&.dig("content")
+  end
+
   def add!(text)
     client = OpenAiClient.new(session_id: session_id)
-    prefix = full_text || default_prefix
-    prompt = [prefix, "\nHuman: ", text].join("")
-
+ 
     request = self.requests.create!(
       thread: self,
       session_id: session_id || thread.session_id,
-      query: text,
-      full_prompt: prompt
+      query: text
     )
-    request.response = client.chat(prompt)
+    request.response = client.chat(text, messages: messages)
     request.parse_response
     request.save!
 
-    # conversation = [prompt, "\nAI: ", request.response_text].join("")
-    conversation = [prompt, "\nAI:", request.response_text].join("")
-    update!(full_text: conversation)
-    puts "A) #{request.response_text}"
+    # append new message 
+    self.messages ||= []
+    self.messages << { "role"=>"user", "content"=>text }
+    self.messages << request.response["choices"][0]["message"]
+    self.save!
+
     return request
   end
 
-  def default_prefix
-    "The following is a conversation with an AI assistant. " +
-    "The assistant is clever, and friendly.\n" +
-    "Human: Hello, who are you?\nAI: I am an AI created by OpenAI. How can I help you today?\n"
-
-    # "The following is a conversation with an AI assistant. " +
-    # "The assistant is helpful, creative, clever, and very friendly.\n" +
-    # "\nHuman: Hello, who are you?\nAI: I am an AI created by OpenAI. How can I help you today?\n"
-  end
 
 end

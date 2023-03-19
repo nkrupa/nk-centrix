@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resource :ai, controller: :ai
 
   # Defines the root path route ("/")
-  root "ai#show"
+  root "ai/request_threads#index"
 
   resources :ai_requests
   

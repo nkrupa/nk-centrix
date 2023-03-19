@@ -4,48 +4,38 @@ RSpec.describe OpenAiClient, type: :model do
   let(:completions_response) { {} }
 
   let(:client) do 
-    double(:client, completions: completions_response)
+    double(:client, chat: completions_response)
   end
 
   subject { OpenAiClient.new(client: client) }
 
-  describe '#question' do 
-    let(:completions_response) do 
-      {"id"=>"cmpl-68Tp56RPFVB26Y5Xv41KwdQCeAYHj",
-       "object"=>"text_completion",
-       "created"=>1667479283,
-       "model"=>"text-davinci-001",
-       "choices"=>
-        [{"text"=>"\n\nThe capital of Alaska is Juneau.",
-          "index"=>0,
-          "logprobs"=>nil,
-          "finish_reason"=>"stop"}],
-       "usage"=>
-        {"prompt_tokens"=>7, "completion_tokens"=>10, "total_tokens"=>17}}  
-    end
-
-    specify do
-      expect(subject.question("What is the capital of Alaska?")).to eq(completions_response)
-    end
-  end
-
   describe '#chat' do 
+    let(:prior_messages) do 
+      [
+        { "role"=>"user", "content"=>"Hello" },
+        { "role"=>"assistant", "content"=>"Hello! How can I assist you today?" },
+        { "role"=>"user", "content"=>"What is the capital of Texas?" },
+        { "role"=>"assistant", "content"=>"The capital of Texas is Austin."},
+      ]
+        
+    end
     let(:completions_response) do 
-      {"id"=>"cmpl-68Tp56RPFVB26Y5Xv41KwdQCeAYHj",
-       "object"=>"text_completion",
-       "created"=>1667479283,
-       "model"=>"text-davinci-001",
-       "choices"=>
-        [{"text"=>"?\n\nAI: I'm fabulous! How are you?",
-          "index"=>0,
-          "logprobs"=>nil,
-          "finish_reason"=>"stop"}],
-       "usage"=>
-        {"prompt_tokens"=>7, "completion_tokens"=>10, "total_tokens"=>17}}  
+      {"id"=>"chatcmpl-6uYg7LWVcodlIF09EJR7F1ncsAGWi",
+        "object"=>"chat.completion",
+        "created"=>1678937691,
+        "model"=>"gpt-3.5-turbo-0301",
+        "usage"=>
+         {"prompt_tokens"=>56, "completion_tokens"=>13, "total_tokens"=>69},
+        "choices"=>
+         [{"message"=>
+            {"role"=>"assistant",
+             "content"=>"Austin was founded on December 27, 1839."},
+           "finish_reason"=>"stop",
+           "index"=>0}]}
     end
 
     specify do
-      expect(subject.chat("What is your name?")).to eq(completions_response)
+      expect(subject.chat "When was it founded?", messages: prior_messages).to eq(completions_response)
     end
   end
 
