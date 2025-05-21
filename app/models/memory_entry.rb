@@ -14,4 +14,16 @@ class MemoryEntry < ApplicationRecord
       .order(Arel.sql("distance ASC"))
       .limit(top_k)
   end
+
+  def self.recall_context(query_text, top_k: 5, session_id: nil)
+    query_embedding = EmbeddingService.embed(query_text)
+    vector_literal = "[#{query_embedding.join(',')}]"
+
+    scope = all
+    scope = scope.where(session_id: session_id) if session_id
+
+    scope.select(
+      Arel.sql("memory_entries.*, embedding <-> '#{vector_literal}'::vector AS distance")
+    ).order(Arel.sql("distance ASC")).limit(top_k)
+  end
 end
