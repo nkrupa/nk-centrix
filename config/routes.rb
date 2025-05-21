@@ -9,13 +9,17 @@ Rails.application.routes.draw do
   root "ai/request_threads#index"
 
   resources :ai_requests
-  
+
+  namespace :admin do
+    resources :help_articles, only: [:index]
+  end
+
   namespace :ai do
-    resources :request_threads do 
+    resources :request_threads do
       resources :threaded_requests, only: [:new, :create], controller: "request_threads/threaded_requests"
     end
     resources :image_requests, controller: "image_requests"
-    resources :threaded_requests, only: [:show], controller: "threaded_requests" do 
+    resources :threaded_requests, only: [:show], controller: "threaded_requests" do
       member do
         get :debug
       end

@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    Ascii85 (2.0.1)
     actioncable (7.0.4.3)
       actionpack (= 7.0.4.3)
       activesupport (= 7.0.4.3)
@@ -66,12 +67,14 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    afm (0.2.2)
     autoprefixer-rails (10.4.13.0)
       execjs (~> 2)
     better_errors (2.9.1)
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
       rack (>= 0.9.0)
+    bigdecimal (3.1.9)
     bindex (0.8.1)
     binding_of_caller (1.0.0)
       debug_inspector (>= 0.0.1)
@@ -124,6 +127,7 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+    hashery (2.1.2)
     httparty (0.21.0)
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
@@ -176,6 +180,12 @@ GEM
     notiffany (0.1.3)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    pdf-reader (2.14.1)
+      Ascii85 (>= 1.0, < 3.0, != 2.0.0)
+      afm (~> 0.2.1)
+      hashery (~> 2.0)
+      ruby-rc4
+      ttfunk
     pg (1.4.6)
     popper_js (2.11.6)
     pry (0.14.2)
@@ -243,6 +253,7 @@ GEM
     rspec-support (3.12.0)
     ruby-openai (3.5.0)
       httparty (>= 0.18.1)
+    ruby-rc4 (0.1.5)
     ruby2_keywords (0.0.5)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -265,6 +276,8 @@ GEM
     thor (1.2.1)
     tilt (2.1.0)
     timeout (0.3.2)
+    ttfunk (1.8.0)
+      bigdecimal (~> 3.1)
     turbo-rails (1.4.0)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
@@ -300,6 +313,7 @@ DEPENDENCIES
   guard-rspec
   importmap-rails
   jbuilder
+  pdf-reader
   pg
   puma (~> 5.0)
   rails (~> 7.0.4)

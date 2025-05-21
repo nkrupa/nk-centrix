@@ -1,0 +1,30 @@
+<h1>Help Articles</h1>
+
+<%= form_with url: admin_help_articles_path, method: :get, local: true do %>
+  <p>
+    <%= label_tag :query, "Search by semantic meaning:" %><br>
+    <%= text_field_tag :query, @query, size: 50 %>
+    <%= submit_tag "Search" %>
+  </p>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Tags</th>
+      <th>Preview</th>
+      <th>Distance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @help_articles.each do |article| %>
+      <tr>
+        <td><%= article.title %></td>
+        <td><%= article.tags %></td>
+        <td><%= truncate(article.content, length: 150) %></td>
+        <td><%= article.try(:distance)&.round(4) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
