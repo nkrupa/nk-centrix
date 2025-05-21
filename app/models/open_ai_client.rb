@@ -13,7 +13,7 @@ class OpenAiClient
     messages.push({ role: "user", content: prompt })
     response = client.chat(
       parameters: {
-          model: "gpt-3.5-turbo", # Required.
+          model: "gpt-4", # Required.
           messages: messages,#[{ role: "user", content: "Hello!"}], # Required.
           temperature: 0.7,
       })
