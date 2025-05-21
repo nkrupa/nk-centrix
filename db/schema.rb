@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_16_034128) do
+ActiveRecord::Schema[7.0].define(version: 2025_05_21_010954) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
+  enable_extension "vector"
 
   create_table "ai_request_images", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "ai_request_id", null: false
@@ -44,6 +45,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_16_034128) do
     t.uuid "ai_request_thread_id"
     t.index ["ai_request_thread_id"], name: "index_ai_requests_on_ai_request_thread_id"
   end
+
+# Could not dump table "memory_entries" because of following StandardError
+#   Unknown type 'vector' for column 'embedding'
 
   add_foreign_key "ai_request_images", "ai_requests"
   add_foreign_key "ai_requests", "ai_request_threads"
