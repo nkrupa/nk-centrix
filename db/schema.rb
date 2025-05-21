@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_05_21_014511) do
+ActiveRecord::Schema[7.0].define(version: 2025_05_21_120537) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -45,6 +45,9 @@ ActiveRecord::Schema[7.0].define(version: 2025_05_21_014511) do
     t.uuid "ai_request_thread_id"
     t.index ["ai_request_thread_id"], name: "index_ai_requests_on_ai_request_thread_id"
   end
+
+# Could not dump table "help_articles" because of following StandardError
+#   Unknown type 'vector' for column 'embedding'
 
 # Could not dump table "memory_entries" because of following StandardError
 #   Unknown type 'vector' for column 'embedding'
