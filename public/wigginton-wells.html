@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_fe5be0f200ed7bddaaa26a82409a038d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_fe5be0f200ed7bddaaa26a82409a038d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_fe5be0f200ed7bddaaa26a82409a038d = L.map(
+                "map_fe5be0f200ed7bddaaa26a82409a038d",
+                {
+                    center: [40.56853069452888, -79.1122486337386],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a93e99cfc96301db0d97635a505206bc = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_fe5be0f200ed7bddaaa26a82409a038d);
+        
+    
+            var marker_cluster_ff632fdbdfbcf4bb72a8a9b65d3b96e7 = L.markerClusterGroup(
+                {}
+            );
+            map_fe5be0f200ed7bddaaa26a82409a038d.addLayer(marker_cluster_ff632fdbdfbcf4bb72a8a9b65d3b96e7);
+        
+    
+            var marker_5bc4ab5f5264f9ec82d4249a91d08141 = L.marker(
+                [40.667452, -79.170369],
+                {}
+            ).addTo(marker_cluster_ff632fdbdfbcf4bb72a8a9b65d3b96e7);
+        
+    
+        var popup_24baf52b3df3873fb6db727f309e6d63 = L.popup({"maxWidth": 350});
+
+        
+            var html_26660d9cc21c22516fa6bfd7cdd8ce90 = $(`<div id="html_26660d9cc21c22516fa6bfd7cdd8ce90" style="width: 100.0%; height: 100.0%;">     <b>Permit:</b> 063-23824<br>     <b>Spud Date:</b> 08/01/1977<br>     <b>Total Production:</b> 87362.94<br>     <div style='max-height:150px;overflow-y:auto;'><ul><li>12/31/1996 | R & P COAL | PENTE | 7593.0</li><li>12/31/1997 | R & P COAL | PENTE | 6865.0</li><li>12/31/1998 | LEASURE, D. | PENTE | 5375.0</li><li>12/31/1999 | LEASURE,DC | PENTE | 6057.0</li><li>12/31/2000 | LEASURE, D | PENTE | 4281.0</li><li>12/31/2001 | R & P COAL | PENTE | 4570.0</li><li>12/31/2002 | R & P COAL | PENTE | 4259.0</li><li>12/31/2003 | R & P COAL | PENTE | 4050.0</li><li>12/31/2004 | R & P COAL | LINN  | 362.0</li><li>12/31/2006 | R & P COAL | LINN  | 3644.0</li><li>12/31/2007 | R & P COAL | LINN  | 2727.0</li><li>12/31/2008 | R & P COAL | XTO E | 2520.0</li><li>12/31/2009 | R & P COAL | XTO E | 2292.0</li><li>12/31/2010 | R&P D LEASU (184A) 3 | XTO E | 2626.0</li><li>12/31/2011 | R&P D LEASU (184A) 3 | XTO E | 2394.0</li><li>12/31/2012 | R&P D LEASU (184A) 3 | XTO E | 2520.0</li><li>12/31/2013 | R&P D LEASU (184A) 3 | XTO E | 2374.0</li><li>12/31/2014 | R&P D LEASU (184A) 3 | XTO E | 2571.0</li><li>12/31/2015 | R&P D LEASU (184A) 3 | XTO E | 2885.0</li><li>12/31/2016 | R&P D LEASU (184A) 3 | XTO E | 2755.0</li><li>12/31/2017 | R&P D LEASU (184A) 3 | DIVER | 1552.0</li><li>12/31/2018 | R&P D LEASU (184A) 3 | DIVER | 1860.0</li><li>12/31/2019 | R&P D LEASU (184A) 3 | DIVER | 1998.0</li><li>12/31/2020 | R&P D LEASU (184A) 3 | DIVER | 2426.0</li><li>12/31/2021 | R&P D LEASU (184A) 3 | DIVER | 2315.38</li><li>12/31/2022 | R&P D LEASU (184A) 3 | DIVER | 1524.7</li><li>12/31/2023 | R&P D LEASU (184A) 3 | DIVER | 1406.13</li><li>12/31/2024 | R&P D LEASU (184A) 3 | DIVER | 1560.73</li></ul></div>     </div>`)[0];
+            popup_24baf52b3df3873fb6db727f309e6d63.setContent(html_26660d9cc21c22516fa6bfd7cdd8ce90);
+        
+
+        marker_5bc4ab5f5264f9ec82d4249a91d08141.bindPopup(popup_24baf52b3df3873fb6db727f309e6d63)
+        ;
+
+        
+    
+    
+            var marker_4ec776154c0a437ca81d4e396e37be05 = L.marker(
+                [40.671705, -79.180103],
+                {}
+            ).addTo(marker_cluster_ff632fdbdfbcf4bb72a8a9b65d3b96e7);
+        
+    
+        var popup_79c86c3c01d19155f4db2a0b5a411c5a = L.popup({"maxWidth": 350});
+
+        
+            var html_fdecbc750c0ac5dac42d1e420f807ca9 = $(`<div id="html_fdecbc750c0ac5dac42d1e420f807ca9" style="width: 100.0%; height: 100.0%;">     <b>Permit:</b> 063-24362<br>     <b>Spud Date:</b> 08/01/1978<br>     <b>Total Production:</b> 50418.82000000001<br>     <div style='max-height:150px;overflow-y:auto;'><ul><li>12/31/1996 | R & P COAL | PENTE | 4350.0</li><li>12/31/1997 | R & P COAL | PENTE | 3263.0</li><li>12/31/1998 | LEASURE, D. | PENTE | 2533.0</li><li>12/31/1999 | LEASURE,DC | PENTE | 3341.0</li><li>12/31/2000 | LEASURE, D | PENTE | 2556.0</li><li>12/31/2001 | R & P COAL | PENTE | 2592.0</li><li>12/31/2002 | R & P COAL | PENTE | 2214.0</li><li>12/31/2003 | R & P COAL | PENTE | 2448.0</li><li>12/31/2004 | R & P COAL | LINN  | 200.0</li><li>12/31/2005 | R & P COAL | LINN  | nan</li><li>12/31/2006 | R & P COAL | LINN  | 1924.0</li><li>12/31/2007 | R & P COAL | LINN  | 1817.0</li><li>12/31/2008 | R & P COAL | XTO E | 1532.0</li><li>12/31/2009 | R & P COAL | XTO E | 1667.0</li><li>12/31/2010 | R&P D LEASU (182A) 3 | XTO E | 1548.0</li><li>12/31/2011 | R&P D LEASU (182A) 3 | XTO E | 1396.0</li><li>12/31/2012 | R&P D LEASU (182A) 3 | XTO E | 1298.0</li><li>12/31/2013 | R&P D LEASU (182A) 3 | XTO E | 1600.0</li><li>12/31/2014 | R&P D LEASU (182A) 3 | XTO E | 1643.0</li><li>12/31/2015 | R&P D LEASU (182A) 3 | XTO E | 1562.0</li><li>12/31/2016 | R&P D LEASU (182A) 3 | XTO E | 2027.0</li><li>12/31/2017 | R&P D LEASU (182A) 3 | DIVER | 1302.0</li><li>12/31/2018 | R&P D LEASU (182A) 3 | DIVER | 924.0</li><li>12/31/2019 | R&P D LEASU (182A) 3 | DIVER | 997.0</li><li>12/31/2020 | R&P D LEASU (182A) 3 | DIVER | 1171.0</li><li>12/31/2021 | R&P D LEASU (182A) 3 | DIVER | 1326.14</li><li>12/31/2022 | R&P D LEASU (182A) 3 | DIVER | 1155.87</li><li>12/31/2023 | R&P D LEASU (182A) 3 | DIVER | 901.44</li><li>12/31/2024 | R&P D LEASU (182A) 3 | DIVER | 1130.37</li></ul></div>     </div>`)[0];
+            popup_79c86c3c01d19155f4db2a0b5a411c5a.setContent(html_fdecbc750c0ac5dac42d1e420f807ca9);
+        
+
+        marker_4ec776154c0a437ca81d4e396e37be05.bindPopup(popup_79c86c3c01d19155f4db2a0b5a411c5a)
+        ;
+
+        
+    
+    
+            var marker_e95f5c20cf1648a1c5d67b4b7e76c17d = L.marker(
+                [40.670334, -79.174875],
+                {}
+            ).addTo(marker_cluster_ff632fdbdfbcf4bb72a8a9b65d3b96e7);
+        
+    
+        var popup_431ee8f77b2dc4ab4dd226e1474aa356 = L.popup({"maxWidth": 350});
+
+        
+            var html_383841616f9087a6e8968b09d6a6d137 = $(`<div id="html_383841616f9087a6e8968b09d6a6d137" style="width: 100.0%; height: 100.0%;">     <b>Permit:</b> 063-24376<br>     <b>Spud Date:</b> 9/21/1978<br>     <b>Total Production:</b> 44482.13999999999<br>     <div style='max-height:150px;overflow-y:auto;'><ul><li>12/31/1996 | R & P COAL | PENTE | 3214.0</li><li>12/31/1997 | R & P COAL | PENTE | 3024.0</li><li>12/31/1998 | LEASURE, D.C. | PENTE | 2805.0</li><li>12/31/1999 | LEASURE,DC | PENTE | 3276.0</li><li>12/31/2000 | LEASURE, DC | PENTE | 2266.0</li><li>12/31/2001 | R & P COAL | PENTE | 2435.0</li><li>12/31/2002 | R & P COAL | PENTE | 1998.0</li><li>12/31/2003 | R & P COAL | PENTE | 1804.0</li><li>12/31/2004 | R & P COAL | LINN  | 162.0</li><li>12/31/2006 | R & P COAL | LINN  | 1732.0</li><li>12/31/2007 | R & P COAL | LINN  | 1729.0</li><li>12/31/2008 | R & P COAL | XTO E | 1207.0</li><li>12/31/2009 | R & P COAL | XTO E | 1341.0</li><li>12/31/2010 | R&P D LEASU 184A #1 1 | XTO E | 1302.0</li><li>12/31/2011 | R&P D LEASU 184A #1 1 | XTO E | 1014.0</li><li>12/31/2012 | R&P D LEASU 184A #1 1 | XTO E | 1092.0</li><li>12/31/2013 | R&P D LEASU 184A #1 1 | XTO E | 1185.0</li><li>12/31/2014 | R&P D LEASU 184A #1 1 | XTO E | 957.0</li><li>12/31/2015 | R&P D LEASU 184A #1 1 | XTO E | 1172.0</li><li>12/31/2016 | R&P D LEASU 184A #1 1 | XTO E | 1094.0</li><li>12/31/2017 | R&P D LEASU 184A #1 1 | DIVER | 704.0</li><li>12/31/2018 | R&P D LEASU 184A #1 1 | DIVER | 798.0</li><li>12/31/2019 | R&P D LEASU 184A #1 1 | DIVER | 812.0</li><li>12/31/2020 | R&P D LEASU 184A #1 1 | DIVER | 999.0</li><li>12/31/2021 | R&P D LEASU 184A #1 1 | DIVER | 1168.27</li><li>12/31/2022 | R&P D LEASU 184A #1 1 | DIVER | 1513.28</li><li>12/31/2023 | R&P D LEASU 184A #1 1 | DIVER | 1637.85</li><li>12/31/2024 | R&P D LEASU 184A #1 1 | DIVER | 2040.74</li></ul></div>     </div>`)[0];
+            popup_431ee8f77b2dc4ab4dd226e1474aa356.setContent(html_383841616f9087a6e8968b09d6a6d137);
+        
+
+        marker_e95f5c20cf1648a1c5d67b4b7e76c17d.bindPopup(popup_431ee8f77b2dc4ab4dd226e1474aa356)
+        ;
+
+        
+    
+    
+            var marker_2be71b660ae8bdfe14be2559bcca6768 = L.marker(
+                [40.554797, -79.109938],
+                {}
+            ).addTo(marker_cluster_ff632fdbdfbcf4bb72a8a9b65d3b96e7);
+        
+    
+        var popup_56e49cb2f2af277bb11833644bce4264 = L.popup({"maxWidth": 350});
+
+        
+            var html_f638b98c8c6daba678dead9baa2f732a = $(`<div id="html_f638b98c8c6daba678dead9baa2f732a" style="width: 100.0%; height: 100.0%;">     <b>Permit:</b> 063-29712<br>     <b>Spud Date:</b> 02/04/1989<br>     <b>Total Production:</b> 78705.7<br>     <div style='max-height:150px;overflow-y:auto;'><ul><li>12/31/1993 | OHM | BELDE | 153.0</li><li>12/31/1996 | OHM | PENTE | 4636.0</li><li>12/31/1997 | OHM | PENTE | 6727.0</li><li>12/31/1998 | OHM | PENTE | 6550.0</li><li>12/31/1999 | OHM | PENTE | 4217.0</li><li>12/31/2000 | OHM | PENTE | 4047.0</li><li>12/31/2001 | OHM | PENTE | 3784.0</li><li>12/31/2002 | OHM | PENTE | 3764.0</li><li>12/31/2003 | OHM | PENTE | 3116.0</li><li>12/31/2004 | OHM | LINN  | 313.6</li><li>12/31/2005 | OHM | LINN  | nan</li><li>12/31/2006 | OHM | LINN  | 4189.0</li><li>12/31/2007 | OHM | LINN  | 3606.0</li><li>12/31/2008 | OHM | XTO E | 3656.0</li><li>12/31/2009 | OHM | XTO E | 2638.0</li><li>12/31/2010 | OHM 12 | XTO E | 2078.0</li><li>12/31/2011 | OHM 12 | XTO E | 2229.0</li><li>12/31/2012 | OHM 12 | XTO E | 1747.0</li><li>12/31/2013 | OHM 12 | XTO E | 1317.0</li><li>12/31/2014 | OHM 12 | XTO E | 444.0</li><li>12/31/2015 | OHM 12 | XTO E | 1915.0</li><li>12/31/2016 | OHM 12 | XTO E | 2173.0</li><li>12/31/2017 | OHM 12 | DIVER | 677.0</li><li>12/31/2018 | OHM 12 | DIVER | 1028.0</li><li>12/31/2019 | OHM 12 | DIVER | 1274.0</li><li>12/31/2020 | OHM 12 | DIVER | 4404.0</li><li>12/31/2021 | OHM 12 | DIVER | 3241.55</li><li>12/31/2022 | OHM 12 | DIVER | 2141.95</li><li>12/31/2023 | OHM 12 | DIVER | 1009.95</li><li>12/31/2024 | OHM 12 | DIVER | 1629.65</li></ul></div>     </div>`)[0];
+            popup_56e49cb2f2af277bb11833644bce4264.setContent(html_f638b98c8c6daba678dead9baa2f732a);
+        
+
+        marker_2be71b660ae8bdfe14be2559bcca6768.bindPopup(popup_56e49cb2f2af277bb11833644bce4264)
+        ;
+
+        
+    
+    
+            var marker_fd69842e6b471a167b5145b18e33689e = L.marker(
+                [40.550685, -79.104929],
+                {}
+            ).addTo(marker_cluster_ff632fdbdfbcf4bb72a8a9b65d3b96e7);
+        
+    
+        var popup_ebbbcde780a3e6177657227b0c0d9d11 = L.popup({"maxWidth": 350});
+
+        
+            var html_916aba114e1c7791dc04317d5eff88e2 = $(`<div id="html_916aba114e1c7791dc04317d5eff88e2" style="width: 100.0%; height: 100.0%;">     <b>Permit:</b> 063-29715<br>     <b>Spud Date:</b> 2/15/1989<br>     <b>Total Production:</b> 92181.1<br>     <div style='max-height:150px;overflow-y:auto;'><ul><li>12/31/1993 | OHM | BELDE | 9773.0</li><li>12/31/1996 | OHM | PENTE | 3928.0</li><li>12/31/1997 | OHM | PENTE | 7849.0</li><li>12/31/1998 | OHM | PENTE | 7095.0</li><li>12/31/1999 | OHM | PENTE | 4740.0</li><li>12/31/2000 | OHM | PENTE | 5531.0</li><li>12/31/2001 | OHM | PENTE | 4644.0</li><li>12/31/2002 | OHM | PENTE | 4611.0</li><li>12/31/2003 | OHM | PENTE | 4339.0</li><li>12/31/2004 | OHM | LINN  | 297.36</li><li>12/31/2005 | OHM | LINN  | nan</li><li>12/31/2006 | OHM | LINN  | 3706.0</li><li>12/31/2007 | OHM | LINN  | 2690.0</li><li>12/31/2008 | OHM | XTO E | 3386.0</li><li>12/31/2009 | OHM | XTO E | 2829.0</li><li>12/31/2010 | OHM 2 | XTO E | 2417.0</li><li>12/31/2011 | OHM 2 | XTO E | 1427.0</li><li>12/31/2012 | OHM 2 | XTO E | 1669.0</li><li>12/31/2013 | OHM 2 | XTO E | 1725.0</li><li>12/31/2014 | OHM 2 | XTO E | 367.0</li><li>12/31/2015 | OHM 2 | XTO E | 2157.0</li><li>12/31/2016 | OHM 2 | XTO E | 2146.0</li><li>12/31/2017 | OHM 2 | DIVER | 564.0</li><li>12/31/2018 | OHM 2 | DIVER | 1141.0</li><li>12/31/2019 | OHM 2 | DIVER | 1395.0</li><li>12/31/2020 | OHM 2 | DIVER | 2766.0</li><li>12/31/2021 | OHM 2 | DIVER | 3619.77</li><li>12/31/2022 | OHM 2 | DIVER | 2633.63</li><li>12/31/2023 | OHM 2 | DIVER | 1549.3</li><li>12/31/2024 | OHM 2 | DIVER | 1186.04</li></ul></div>     </div>`)[0];
+            popup_ebbbcde780a3e6177657227b0c0d9d11.setContent(html_916aba114e1c7791dc04317d5eff88e2);
+        
+
+        marker_fd69842e6b471a167b5145b18e33689e.bindPopup(popup_ebbbcde780a3e6177657227b0c0d9d11)
+        ;
+
+        
+    
+    
+            var marker_bc8a0640b56bb9dea2a87ccc1d1ebe24 = L.marker(
+                [40.551234, -79.101421],
+                {}
+            ).addTo(marker_cluster_ff632fdbdfbcf4bb72a8a9b65d3b96e7);
+        
+    
+        var popup_669a229607e9b0b856a4ef061ee3b1c8 = L.popup({"maxWidth": 350});
+
+        
+            var html_89064eadf5f5332d2b73ae5a14c5a5d9 = $(`<div id="html_89064eadf5f5332d2b73ae5a14c5a5d9" style="width: 100.0%; height: 100.0%;">     <b>Permit:</b> 063-29716<br>     <b>Spud Date:</b> 1/18/1989<br>     <b>Total Production:</b> 109201.07<br>     <div style='max-height:150px;overflow-y:auto;'><ul><li>12/31/1993 | OHM | BELDE | 2311.0</li><li>12/31/1996 | OHM | PENTE | 1288.0</li><li>12/31/1997 | OHM | PENTE | 2819.0</li><li>12/31/1998 | OHM | PENTE | 16195.0</li><li>12/31/1999 | OHM | PENTE | 14051.0</li><li>12/31/2000 | OHM | PENTE | 11331.0</li><li>12/31/2002 | OHM | PENTE | 6895.0</li><li>12/31/2003 | OHM | PENTE | 4978.0</li><li>12/31/2004 | OHM | LINN  | 416.11</li><li>12/31/2006 | OHM | LINN  | 5200.0</li><li>12/31/2007 | OHM | LINN  | 4188.0</li><li>12/31/2008 | OHM | XTO E | 3487.0</li><li>12/31/2009 | OHM | XTO E | 3421.0</li><li>12/31/2010 | OHM 3 | XTO E | 2521.0</li><li>12/31/2011 | OHM 3 | XTO E | 2685.0</li><li>12/31/2012 | OHM 3 | XTO E | 2983.0</li><li>12/31/2013 | OHM 3 | XTO E | 2512.0</li><li>12/31/2014 | OHM 3 | XTO E | 300.0</li><li>12/31/2015 | OHM 3 | XTO E | 2537.0</li><li>12/31/2016 | OHM 3 | XTO E | 2537.0</li><li>12/31/2017 | OHM 3 | DIVER | 846.0</li><li>12/31/2018 | OHM 3 | DIVER | 1216.0</li><li>12/31/2019 | OHM 3 | DIVER | 953.0</li><li>12/31/2020 | OHM 3 | DIVER | 1961.0</li><li>12/31/2021 | OHM 3 | DIVER | 3509.15</li><li>12/31/2022 | OHM 3 | DIVER | 3193.02</li><li>12/31/2023 | OHM 3 | DIVER | 2085.1</li><li>12/31/2024 | OHM 3 | DIVER | 2782.69</li></ul></div>     </div>`)[0];
+            popup_669a229607e9b0b856a4ef061ee3b1c8.setContent(html_89064eadf5f5332d2b73ae5a14c5a5d9);
+        
+
+        marker_bc8a0640b56bb9dea2a87ccc1d1ebe24.bindPopup(popup_669a229607e9b0b856a4ef061ee3b1c8)
+        ;
+
+        
+    
+    
+            var marker_0ae015beb40b550ba96c9d0338d8bde3 = L.marker(
+                [40.552113, -79.097858],
+                {}
+            ).addTo(marker_cluster_ff632fdbdfbcf4bb72a8a9b65d3b96e7);
+        
+    
+        var popup_119c518c5519feab018e86e5e1978ef5 = L.popup({"maxWidth": 350});
+
+        
+            var html_869f480db9dfe44de2482c7a28cc134c = $(`<div id="html_869f480db9dfe44de2482c7a28cc134c" style="width: 100.0%; height: 100.0%;">     <b>Permit:</b> 063-29717<br>     <b>Spud Date:</b> 1/25/1989<br>     <b>Total Production:</b> 46024.06<br>     <div style='max-height:150px;overflow-y:auto;'><ul><li>12/31/1993 | OHM | BELDE | 5407.0</li><li>12/31/1996 | OHM | PENTE | 1508.0</li><li>12/31/1997 | OHM | PENTE | 3460.0</li><li>12/31/1998 | OHM | PENTE | 3181.0</li><li>12/31/1999 | OHM | PENTE | 2229.0</li><li>12/31/2000 | OHM | PENTE | 2588.0</li><li>12/31/2001 | OHM | PENTE | 2380.0</li><li>12/31/2002 | OHM | PENTE | 2085.0</li><li>12/31/2003 | OHM | PENTE | 1618.0</li><li>12/31/2004 | OHM | LINN  | 78.15</li><li>12/31/2005 | OHM | LINN  | nan</li><li>12/31/2006 | OHM | LINN  | 2252.0</li><li>12/31/2007 | OHM | LINN  | 1547.0</li><li>12/31/2008 | OHM | XTO E | 1717.0</li><li>12/31/2009 | OHM | XTO E | 1692.0</li><li>12/31/2010 | OHM 4 | XTO E | 1399.0</li><li>12/31/2011 | OHM 4 | XTO E | 2255.0</li><li>12/31/2012 | OHM 4 | XTO E | 1576.0</li><li>12/31/2013 | OHM 4 | XTO E | 1256.0</li><li>12/31/2014 | OHM 4 | XTO E | 204.0</li><li>12/31/2015 | OHM 4 | XTO E | 952.0</li><li>12/31/2016 | OHM 4 | XTO E | 727.0</li><li>12/31/2017 | OHM 4 | DIVER | 88.0</li><li>12/31/2018 | OHM 4 | DIVER | 38.0</li><li>12/31/2019 | OHM 4 | DIVER | 564.0</li><li>12/31/2020 | OHM 4 | DIVER | 1105.0</li><li>12/31/2021 | OHM 4 | DIVER | 1272.72</li><li>12/31/2022 | OHM 4 | DIVER | 968.77</li><li>12/31/2023 | OHM 4 | DIVER | 974.88</li><li>12/31/2024 | OHM 4 | DIVER | 901.54</li></ul></div>     </div>`)[0];
+            popup_119c518c5519feab018e86e5e1978ef5.setContent(html_869f480db9dfe44de2482c7a28cc134c);
+        
+
+        marker_0ae015beb40b550ba96c9d0338d8bde3.bindPopup(popup_119c518c5519feab018e86e5e1978ef5)
+        ;
+
+        
+    
+    
+            var marker_6a4f26d877119ef390916cd53f4e7034 = L.marker(
+                [40.552638, -79.107654],
+                {}
+            ).addTo(marker_cluster_ff632fdbdfbcf4bb72a8a9b65d3b96e7);
+        
+    
+        var popup_be46e0cfc2fc181fbc29d3f05fc4affd = L.popup({"maxWidth": 350});
+
+        
+            var html_4137115f60ebe6825384b2ac791f3f1f = $(`<div id="html_4137115f60ebe6825384b2ac791f3f1f" style="width: 100.0%; height: 100.0%;">     <b>Permit:</b> 063-29720<br>     <b>Spud Date:</b> 02/04/1989<br>     <b>Total Production:</b> 84282.69<br>     <div style='max-height:150px;overflow-y:auto;'><ul><li>12/31/1993 | OHM | BELDE | 8269.0</li><li>12/31/1996 | OHM | PENTE | 5333.0</li><li>12/31/1997 | OHM | PENTE | 7256.0</li><li>12/31/1998 | OHM | PENTE | 5864.0</li><li>12/31/1999 | OHM | PENTE | 4789.0</li><li>12/31/2000 | OHM | PENTE | 4328.0</li><li>12/31/2001 | OHM | PENTE | 2876.0</li><li>12/31/2002 | OHM | PENTE | 2850.0</li><li>12/31/2003 | OHM | PENTE | 3633.0</li><li>12/31/2004 | OHM | LINN  | 396.82</li><li>12/31/2005 | OHM | LINN  | nan</li><li>12/31/2006 | OHM | LINN  | 4135.0</li><li>12/31/2007 | OHM | LINN  | 3074.0</li><li>12/31/2008 | OHM | XTO E | 2830.0</li><li>12/31/2009 | OHM | XTO E | 2756.0</li><li>12/31/2010 | OHM 7 | XTO E | 2122.0</li><li>12/31/2011 | OHM 7 | XTO E | 2237.0</li><li>12/31/2012 | OHM 7 | XTO E | 2125.0</li><li>12/31/2013 | OHM 7 | XTO E | 1929.0</li><li>12/31/2014 | OHM 7 | XTO E | 340.0</li><li>12/31/2015 | OHM 7 | XTO E | 846.0</li><li>12/31/2016 | OHM 7 | XTO E | 885.0</li><li>12/31/2017 | OHM 7 | DIVER | 902.0</li><li>12/31/2018 | OHM 7 | DIVER | 1277.0</li><li>12/31/2019 | OHM 7 | DIVER | 826.0</li><li>12/31/2020 | OHM 7 | DIVER | 2453.0</li><li>12/31/2021 | OHM 7 | DIVER | 3096.85</li><li>12/31/2022 | OHM 7 | DIVER | 2679.65</li><li>12/31/2023 | OHM 7 | DIVER | 2197.29</li><li>12/31/2024 | OHM 7 | DIVER | 1977.08</li></ul></div>     </div>`)[0];
+            popup_be46e0cfc2fc181fbc29d3f05fc4affd.setContent(html_4137115f60ebe6825384b2ac791f3f1f);
+        
+
+        marker_6a4f26d877119ef390916cd53f4e7034.bindPopup(popup_be46e0cfc2fc181fbc29d3f05fc4affd)
+        ;
+
+        
+    
+    
+            var marker_2b1b536c2e8b33755ba39c66fe7fd410 = L.marker(
+                [40.553723, -79.104194],
+                {}
+            ).addTo(marker_cluster_ff632fdbdfbcf4bb72a8a9b65d3b96e7);
+        
+    
+        var popup_ed26c1fd3412ed4af9baec2a012aa574 = L.popup({"maxWidth": 350});
+
+        
+            var html_6557a82f406ef5c066c8e10093edef4b = $(`<div id="html_6557a82f406ef5c066c8e10093edef4b" style="width: 100.0%; height: 100.0%;">     <b>Permit:</b> 063-29721<br>     <b>Spud Date:</b> 1/30/1989<br>     <b>Total Production:</b> 82515.61<br>     <div style='max-height:150px;overflow-y:auto;'><ul><li>12/31/1993 | OHM | BELDE | 7273.0</li><li>12/31/1996 | OHM | PENTE | 4923.0</li><li>12/31/1997 | OHM | PENTE | 7608.0</li><li>12/31/1998 | OHM | PENTE | 5894.0</li><li>12/31/1999 | OHM | PENTE | 4717.0</li><li>12/31/2000 | OHM | PENTE | 5074.0</li><li>12/31/2001 | OHM | PENTE | 3967.0</li><li>12/31/2002 | OHM | PENTE | 3816.0</li><li>12/31/2003 | OHM | PENTE | 4523.0</li><li>12/31/2004 | OHM | LINN  | 358.26</li><li>12/31/2005 | OHM | LINN  | nan</li><li>12/31/2006 | OHM | LINN  | 3082.0</li><li>12/31/2007 | OHM | LINN  | 2734.0</li><li>12/31/2008 | OHM | XTO E | 3021.0</li><li>12/31/2009 | OHM | XTO E | 2248.0</li><li>12/31/2010 | OHM 8 | XTO E | 1618.0</li><li>12/31/2011 | OHM 8 | XTO E | 1885.0</li><li>12/31/2012 | OHM 8 | XTO E | 1806.0</li><li>12/31/2013 | OHM 8 | XTO E | 1857.0</li><li>12/31/2014 | OHM 8 | XTO E | 436.0</li><li>12/31/2015 | OHM 8 | XTO E | 931.0</li><li>12/31/2016 | OHM 8 | XTO E | 1426.0</li><li>12/31/2017 | OHM 8 | DIVER | 953.0</li><li>12/31/2018 | OHM 8 | DIVER | 1641.0</li><li>12/31/2019 | OHM 8 | DIVER | 919.0</li><li>12/31/2020 | OHM 8 | DIVER | 2405.0</li><li>12/31/2021 | OHM 8 | DIVER | 2019.82</li><li>12/31/2022 | OHM 8 | DIVER | 2294.93</li><li>12/31/2023 | OHM 8 | DIVER | 1727.81</li><li>12/31/2024 | OHM 8 | DIVER | 1357.79</li></ul></div>     </div>`)[0];
+            popup_ed26c1fd3412ed4af9baec2a012aa574.setContent(html_6557a82f406ef5c066c8e10093edef4b);
+        
+
+        marker_2b1b536c2e8b33755ba39c66fe7fd410.bindPopup(popup_ed26c1fd3412ed4af9baec2a012aa574)
+        ;
+
+        
+    
+    
+            var marker_9b385c92bb945f39ea7d4a6ef42d09fb = L.marker(
+                [40.555242, -79.097143],
+                {}
+            ).addTo(marker_cluster_ff632fdbdfbcf4bb72a8a9b65d3b96e7);
+        
+    
+        var popup_02a5d4da16b6e7782f20379009bfb3b7 = L.popup({"maxWidth": 350});
+
+        
+            var html_04b44dc218f4d64425696360a32128af = $(`<div id="html_04b44dc218f4d64425696360a32128af" style="width: 100.0%; height: 100.0%;">     <b>Permit:</b> 063-29722<br>     <b>Spud Date:</b> 01/01/1800<br>     <b>Total Production:</b> 272393.22000000003<br>     <div style='max-height:150px;overflow-y:auto;'><ul><li>12/31/1996 | OHM | PENTE | 1347.0</li><li>12/31/1997 | OHM | PENTE | 1717.0</li><li>12/31/1998 | OHM | PENTE | 66607.0</li><li>12/31/1999 | OHM | PENTE | 47744.0</li><li>12/31/2000 | OHM | PENTE | 36246.0</li><li>12/31/2001 | OHM | PENTE | 22048.0</li><li>12/31/2002 | OHM | PENTE | 16784.0</li><li>12/31/2003 | OHM | PENTE | 9445.0</li><li>12/31/2004 | OHM | LINN  | 753.05</li><li>12/31/2006 | OHM | LINN  | 7946.0</li><li>12/31/2007 | OHM | LINN  | 6240.0</li><li>12/31/2008 | OHM | XTO E | 6101.0</li><li>12/31/2009 | OHM | XTO E | 4959.0</li><li>12/31/2010 | OHM 9 | XTO E | 3693.0</li><li>12/31/2011 | OHM 9 | XTO E | 3983.0</li><li>12/31/2012 | OHM 9 | XTO E | 3515.0</li><li>12/31/2013 | OHM 9 | XTO E | 3405.0</li><li>12/31/2014 | OHM 9 | XTO E | 380.0</li><li>12/31/2015 | OHM 9 | XTO E | 4021.0</li><li>12/31/2016 | OHM 9 | XTO E | 3609.0</li><li>12/31/2017 | OHM 9 | DIVER | 1129.0</li><li>12/31/2018 | OHM 9 | DIVER | 1733.0</li><li>12/31/2019 | OHM 9 | DIVER | 1677.0</li><li>12/31/2020 | OHM 9 | DIVER | 3525.0</li><li>12/31/2021 | OHM 9 | DIVER | 3751.07</li><li>12/31/2022 | OHM 9 | DIVER | 3973.44</li><li>12/31/2023 | OHM 9 | DIVER | 3611.83</li><li>12/31/2024 | OHM 9 | DIVER | 2449.83</li></ul></div>     </div>`)[0];
+            popup_02a5d4da16b6e7782f20379009bfb3b7.setContent(html_04b44dc218f4d64425696360a32128af);
+        
+
+        marker_9b385c92bb945f39ea7d4a6ef42d09fb.bindPopup(popup_02a5d4da16b6e7782f20379009bfb3b7)
+        ;
+
+        
+    
+    
+            var marker_e3dd8eded10ad9d6e291e8d2d277b1b4 = L.marker(
+                [40.558866, -79.103227],
+                {}
+            ).addTo(marker_cluster_ff632fdbdfbcf4bb72a8a9b65d3b96e7);
+        
+    
+        var popup_90674ec6b61cb80fe0e19b5b048c3527 = L.popup({"maxWidth": 350});
+
+        
+            var html_f867942f20239b326184deb56351a910 = $(`<div id="html_f867942f20239b326184deb56351a910" style="width: 100.0%; height: 100.0%;">     <b>Permit:</b> 063-29727<br>     <b>Spud Date:</b> 01/01/1800<br>     <b>Total Production:</b> 34373.68<br>     <div style='max-height:150px;overflow-y:auto;'><ul><li>12/31/1993 | OHM | BELDE | 2584.0</li><li>12/31/1996 | OHM | PENTE | 2192.0</li><li>12/31/1997 | OHM | PENTE | 2701.0</li><li>12/31/1998 | OHM | PENTE | 2439.0</li><li>12/31/1999 | OHM | PENTE | 1920.0</li><li>12/31/2000 | OHM | PENTE | 1861.0</li><li>12/31/2001 | OHM | PENTE | 1589.0</li><li>12/31/2002 | OHM | PENTE | 1507.0</li><li>12/31/2003 | OHM | PENTE | 1523.0</li><li>12/31/2004 | OHM | LINN  | 119.76</li><li>12/31/2006 | OHM | LINN  | 1912.0</li><li>12/31/2007 | OHM | LINN  | 1201.0</li><li>12/31/2008 | OHM | XTO E | 1767.0</li><li>12/31/2009 | OHM | XTO E | 1548.0</li><li>12/31/2010 | OHM 16 | XTO E | 812.0</li><li>12/31/2011 | OHM 16 | XTO E | 968.0</li><li>12/31/2012 | OHM 16 | XTO E | 742.0</li><li>12/31/2013 | OHM 16 | XTO E | 893.0</li><li>12/31/2014 | OHM 16 | XTO E | 118.0</li><li>12/31/2015 | OHM 16 | XTO E | 144.0</li><li>12/31/2016 | OHM 16 | XTO E | 322.0</li><li>12/31/2017 | OHM 16 | DIVER | 251.0</li><li>12/31/2018 | OHM 16 | DIVER | 382.0</li><li>12/31/2019 | OHM 16 | DIVER | 244.0</li><li>12/31/2020 | OHM 16 | DIVER | 689.0</li><li>12/31/2021 | OHM 16 | DIVER | 761.29</li><li>12/31/2022 | OHM 16 | DIVER | 825.34</li><li>12/31/2023 | OHM 16 | DIVER | 1150.72</li><li>12/31/2024 | OHM 16 | DIVER | 1207.57</li></ul></div>     </div>`)[0];
+            popup_90674ec6b61cb80fe0e19b5b048c3527.setContent(html_f867942f20239b326184deb56351a910);
+        
+
+        marker_e3dd8eded10ad9d6e291e8d2d277b1b4.bindPopup(popup_90674ec6b61cb80fe0e19b5b048c3527)
+        ;
+
+        
+    
+    
+            var marker_318be20637f9f1cd5e0ade1b7e70f26f = L.marker(
+                [40.549586, -79.108329],
+                {}
+            ).addTo(marker_cluster_ff632fdbdfbcf4bb72a8a9b65d3b96e7);
+        
+    
+        var popup_b77ba27ebf939743e1360ca49061ebad = L.popup({"maxWidth": 350});
+
+        
+            var html_c6d73809dceed65ed8b0488b0fd135f6 = $(`<div id="html_c6d73809dceed65ed8b0488b0fd135f6" style="width: 100.0%; height: 100.0%;">     <b>Permit:</b> 063-29746<br>     <b>Spud Date:</b> 2/22/1989<br>     <b>Total Production:</b> 45089.97<br>     <div style='max-height:150px;overflow-y:auto;'><ul><li>12/31/1993 | OHM | BELDE | 3570.0</li><li>12/31/1996 | OHM | PENTE | 2420.0</li><li>12/31/1997 | OHM | PENTE | 3968.0</li><li>12/31/1998 | OHM | PENTE | 3786.0</li><li>12/31/1999 | OHM | PENTE | 2816.0</li><li>12/31/2000 | OHM | PENTE | 2444.0</li><li>12/31/2001 | OHM | PENTE | 7449.0</li><li>12/31/2002 | OHM | PENTE | 1975.0</li><li>12/31/2003 | OHM | PENTE | 1966.0</li><li>12/31/2004 | OHM | LINN  | 152.23</li><li>12/31/2005 | OHM | LINN  | nan</li><li>12/31/2006 | OHM | LINN  | 1443.0</li><li>12/31/2007 | OHM | LINN  | 625.0</li><li>12/31/2008 | OHM | XTO E | 1264.0</li><li>12/31/2009 | OHM | XTO E | 1022.0</li><li>12/31/2010 | OHM 1 | XTO E | 1553.0</li><li>12/31/2011 | OHM 1 | XTO E | 1280.0</li><li>12/31/2012 | OHM 1 | XTO E | 646.0</li><li>12/31/2013 | OHM 1 | XTO E | 348.0</li><li>12/31/2014 | OHM 1 | XTO E | 229.0</li><li>12/31/2015 | OHM 1 | XTO E | 1483.0</li><li>12/31/2016 | OHM 1 | XTO E | 987.0</li><li>12/31/2017 | OHM 1 | DIVER | 240.0</li><li>12/31/2018 | OHM 1 | DIVER | 335.0</li><li>12/31/2019 | OHM 1 | DIVER | 234.0</li><li>12/31/2020 | OHM 1 | DIVER | 616.0</li><li>12/31/2021 | OHM 1 | DIVER | 592.33</li><li>12/31/2022 | OHM 1 | DIVER | 515.26</li><li>12/31/2023 | OHM 1 | DIVER | 468.69</li><li>12/31/2024 | OHM 1 | DIVER | 662.46</li></ul></div>     </div>`)[0];
+            popup_b77ba27ebf939743e1360ca49061ebad.setContent(html_c6d73809dceed65ed8b0488b0fd135f6);
+        
+
+        marker_318be20637f9f1cd5e0ade1b7e70f26f.bindPopup(popup_b77ba27ebf939743e1360ca49061ebad)
+        ;
+
+        
+    
+    
+            var marker_553ba06763c54ba860e66015ea10af4d = L.marker(
+                [40.558186, -79.107517],
+                {}
+            ).addTo(marker_cluster_ff632fdbdfbcf4bb72a8a9b65d3b96e7);
+        
+    
+        var popup_b47707729563011a934570323ef7027d = L.popup({"maxWidth": 350});
+
+        
+            var html_e178ae2344d7d8219397c9439bf0bde2 = $(`<div id="html_e178ae2344d7d8219397c9439bf0bde2" style="width: 100.0%; height: 100.0%;">     <b>Permit:</b> 063-29747<br>     <b>Spud Date:</b> 01/01/1800<br>     <b>Total Production:</b> 55069.95<br>     <div style='max-height:150px;overflow-y:auto;'><ul><li>12/31/1993 | OHM | BELDE | 3760.0</li><li>12/31/1996 | OHM | PENTE | 2703.0</li><li>12/31/1997 | OHM | PENTE | 3912.0</li><li>12/31/1998 | OHM | PENTE | 3374.0</li><li>12/31/1999 | OHM | PENTE | 3086.0</li><li>12/31/2000 | OHM | PENTE | 2147.0</li><li>12/31/2001 | OHM | PENTE | 1829.0</li><li>12/31/2002 | OHM | PENTE | 2199.0</li><li>12/31/2003 | OHM | PENTE | 1792.0</li><li>12/31/2004 | OHM | LINN  | 266.92</li><li>12/31/2005 | OHM | LINN  | nan</li><li>12/31/2006 | OHM | LINN  | 3108.0</li><li>12/31/2007 | OHM | LINN  | 3212.0</li><li>12/31/2008 | OHM | XTO E | 1832.0</li><li>12/31/2009 | OHM | XTO E | 1917.0</li><li>12/31/2010 | OHM 17 | XTO E | 1802.0</li><li>12/31/2011 | OHM 17 | XTO E | 1963.0</li><li>12/31/2012 | OHM 17 | XTO E | 1706.0</li><li>12/31/2013 | OHM 17 | XTO E | 1599.0</li><li>12/31/2014 | OHM 17 | XTO E | 75.0</li><li>12/31/2015 | OHM 17 | XTO E | 2321.0</li><li>12/31/2016 | OHM 17 | XTO E | 2577.0</li><li>12/31/2017 | OHM 17 | DIVER | 892.0</li><li>12/31/2018 | OHM 17 | DIVER | 1109.0</li><li>12/31/2019 | OHM 17 | DIVER | 826.0</li><li>12/31/2020 | OHM 17 | DIVER | 1974.0</li><li>12/31/2021 | OHM 17 | DIVER | 2517.97</li><li>12/31/2022 | OHM 17 | DIVER | 340.68</li><li>12/31/2023 | OHM 17 | DIVER | 0.0</li><li>12/31/2024 | OHM 17 | DIVER | 229.38</li></ul></div>     </div>`)[0];
+            popup_b47707729563011a934570323ef7027d.setContent(html_e178ae2344d7d8219397c9439bf0bde2);
+        
+
+        marker_553ba06763c54ba860e66015ea10af4d.bindPopup(popup_b47707729563011a934570323ef7027d)
+        ;
+
+        
+    
+    
+            var marker_36a386bf62ab684e2bcb1dc5e070fbfc = L.marker(
+                [40.56331, -79.111465],
+                {}
+            ).addTo(marker_cluster_ff632fdbdfbcf4bb72a8a9b65d3b96e7);
+        
+    
+        var popup_6e5aed8957da229ecf992a82d5ba96b5 = L.popup({"maxWidth": 350});
+
+        
+            var html_c700ff29e456546c97b7afafb7be3d1e = $(`<div id="html_c700ff29e456546c97b7afafb7be3d1e" style="width: 100.0%; height: 100.0%;">     <b>Permit:</b> 063-29841<br>     <b>Spud Date:</b> 11/06/1989<br>     <b>Total Production:</b> 77701.03<br>     <div style='max-height:150px;overflow-y:auto;'><ul><li>12/31/1993 | OHM | BELDE | 6411.0</li><li>12/31/1996 | OHM | PENTE | 5145.0</li><li>12/31/1997 | OHM | PENTE | 7840.0</li><li>12/31/1998 | OHM | PENTE | 6025.0</li><li>12/31/1999 | OHM | PENTE | 4663.0</li><li>12/31/2000 | OHM | PENTE | 4765.0</li><li>12/31/2001 | OHM | PENTE | 4172.0</li><li>12/31/2002 | OHM | PENTE | 4123.0</li><li>12/31/2003 | OHM | PENTE | 3682.0</li><li>12/31/2004 | OHM | LINN  | 431.33</li><li>12/31/2005 | OHM | LINN  | nan</li><li>12/31/2006 | OHM | LINN  | 3552.0</li><li>12/31/2007 | OHM | LINN  | 2150.0</li><li>12/31/2008 | OHM | XTO E | 2323.0</li><li>12/31/2009 | OHM | XTO E | 2124.0</li><li>12/31/2010 | OHM 30 | XTO E | 1801.0</li><li>12/31/2011 | OHM 30 | XTO E | 1577.0</li><li>12/31/2012 | OHM 30 | XTO E | 803.0</li><li>12/31/2013 | OHM 30 | XTO E | 1501.0</li><li>12/31/2014 | OHM 30 | XTO E | 436.0</li><li>12/31/2015 | OHM 30 | XTO E | 563.0</li><li>12/31/2016 | OHM 30 | XTO E | 2186.0</li><li>12/31/2017 | OHM 30 | DIVER | 849.0</li><li>12/31/2018 | OHM 30 | DIVER | 1194.0</li><li>12/31/2019 | OHM 30 | DIVER | 1189.0</li><li>12/31/2020 | OHM 30 | DIVER | 1944.0</li><li>12/31/2021 | OHM 30 | DIVER | 1758.41</li><li>12/31/2022 | OHM 30 | DIVER | 2125.12</li><li>12/31/2023 | OHM 30 | DIVER | 1117.56</li><li>12/31/2024 | OHM 30 | DIVER | 1250.61</li></ul></div>     </div>`)[0];
+            popup_6e5aed8957da229ecf992a82d5ba96b5.setContent(html_c700ff29e456546c97b7afafb7be3d1e);
+        
+
+        marker_36a386bf62ab684e2bcb1dc5e070fbfc.bindPopup(popup_6e5aed8957da229ecf992a82d5ba96b5)
+        ;
+
+        
+    
+    
+            var marker_b0acd91702525d49dd93f7e0f9625b36 = L.marker(
+                [40.56117, -79.105778],
+                {}
+            ).addTo(marker_cluster_ff632fdbdfbcf4bb72a8a9b65d3b96e7);
+        
+    
+        var popup_ca22aeb42d9eee6f0af1331f6c9a28eb = L.popup({"maxWidth": 350});
+
+        
+            var html_dd6fe45916d917f6574ff9178717ac35 = $(`<div id="html_dd6fe45916d917f6574ff9178717ac35" style="width: 100.0%; height: 100.0%;">     <b>Permit:</b> 063-29844<br>     <b>Spud Date:</b> 11/11/1989<br>     <b>Total Production:</b> 81931.55<br>     <div style='max-height:150px;overflow-y:auto;'><ul><li>12/31/1993 | OHM | BELDE | 9038.0</li><li>12/31/1996 | OHM | PENTE | 5201.0</li><li>12/31/1997 | OHM | PENTE | 8440.0</li><li>12/31/1998 | OHM | PENTE | 7041.0</li><li>12/31/1999 | OHM | PENTE | 5088.0</li><li>12/31/2000 | OHM | PENTE | 4213.0</li><li>12/31/2001 | OHM | PENTE | 3847.0</li><li>12/31/2002 | OHM | PENTE | 3735.0</li><li>12/31/2003 | OHM | PENTE | 3798.0</li><li>12/31/2004 | OHM | LINN  | 361.3</li><li>12/31/2005 | OHM | LINN  | nan</li><li>12/31/2006 | OHM | LINN  | 2707.0</li><li>12/31/2007 | OHM | LINN  | 2085.0</li><li>12/31/2008 | OHM | XTO E | 1887.0</li><li>12/31/2009 | OHM | XTO E | 1867.0</li><li>12/31/2010 | OHM 27 | XTO E | 1009.0</li><li>12/31/2011 | OHM 27 | XTO E | 2151.0</li><li>12/31/2012 | OHM 27 | XTO E | 1879.0</li><li>12/31/2013 | OHM 27 | XTO E | 2037.0</li><li>12/31/2014 | OHM 27 | XTO E | 406.0</li><li>12/31/2015 | OHM 27 | XTO E | 1924.0</li><li>12/31/2016 | OHM 27 | XTO E | 2195.0</li><li>12/31/2017 | OHM 27 | DIVER | 568.0</li><li>12/31/2018 | OHM 27 | DIVER | 914.0</li><li>12/31/2019 | OHM 27 | DIVER | 998.0</li><li>12/31/2020 | OHM 27 | DIVER | 2138.0</li><li>12/31/2021 | OHM 27 | DIVER | 2011.15</li><li>12/31/2022 | OHM 27 | DIVER | 1770.63</li><li>12/31/2023 | OHM 27 | DIVER | 1533.89</li><li>12/31/2024 | OHM 27 | DIVER | 1088.58</li></ul></div>     </div>`)[0];
+            popup_ca22aeb42d9eee6f0af1331f6c9a28eb.setContent(html_dd6fe45916d917f6574ff9178717ac35);
+        
+
+        marker_b0acd91702525d49dd93f7e0f9625b36.bindPopup(popup_ca22aeb42d9eee6f0af1331f6c9a28eb)
+        ;
+
+        
+    
+    
+            var marker_120481f7523236f4595ea3c8752e073a = L.marker(
+                [40.560703, -79.109305],
+                {}
+            ).addTo(marker_cluster_ff632fdbdfbcf4bb72a8a9b65d3b96e7);
+        
+    
+        var popup_8feaffc7676d9a7e85e6076402434685 = L.popup({"maxWidth": 350});
+
+        
+            var html_79a82654250d58de87cff48d551dbdc3 = $(`<div id="html_79a82654250d58de87cff48d551dbdc3" style="width: 100.0%; height: 100.0%;">     <b>Permit:</b> 063-29877<br>     <b>Spud Date:</b> 11/24/1989<br>     <b>Total Production:</b> 36508.45<br>     <div style='max-height:150px;overflow-y:auto;'><ul><li>12/31/1993 | OHM | BELDE | 3721.0</li><li>12/31/1998 | OHM | PENTE | 2963.0</li><li>12/31/1999 | OHM | PENTE | 2262.0</li><li>12/31/2000 | OHM | PENTE | 2739.0</li><li>12/31/2001 | OHM | PENTE | 2470.0</li><li>12/31/2002 | OHM | PENTE | 2047.0</li><li>12/31/2003 | OHM | PENTE | 1593.0</li><li>12/31/2004 | OHM | LINN  | 179.64</li><li>12/31/2006 | OHM | LINN  | 1677.0</li><li>12/31/2007 | OHM | LINN  | 1404.0</li><li>12/31/2008 | OHM | XTO E | 1267.0</li><li>12/31/2009 | OHM | XTO E | 1440.0</li><li>12/31/2010 | OHM 26 | XTO E | 1190.0</li><li>12/31/2011 | OHM 26 | XTO E | 1202.0</li><li>12/31/2012 | OHM 26 | XTO E | 1243.0</li><li>12/31/2013 | OHM 26 | XTO E | 337.0</li><li>12/31/2014 | OHM 26 | XTO E | 286.0</li><li>12/31/2015 | OHM 26 | XTO E | 880.0</li><li>12/31/2016 | OHM 26 | XTO E | 1097.0</li><li>12/31/2017 | OHM 26 | DIVER | 323.0</li><li>12/31/2018 | OHM 26 | DIVER | 491.0</li><li>12/31/2019 | OHM 26 | DIVER | 633.0</li><li>12/31/2020 | OHM 26 | DIVER | 1190.0</li><li>12/31/2021 | OHM 26 | DIVER | 1279.6</li><li>12/31/2022 | OHM 26 | DIVER | 1136.37</li><li>12/31/2023 | OHM 26 | DIVER | 872.2</li><li>12/31/2024 | OHM 26 | DIVER | 585.64</li></ul></div>     </div>`)[0];
+            popup_8feaffc7676d9a7e85e6076402434685.setContent(html_79a82654250d58de87cff48d551dbdc3);
+        
+
+        marker_120481f7523236f4595ea3c8752e073a.bindPopup(popup_8feaffc7676d9a7e85e6076402434685)
+        ;
+
+        
+    
+    
+            var marker_f49c21c78dcb0c94256667dfbd92e156 = L.marker(
+                [40.546541, -79.106175],
+                {}
+            ).addTo(marker_cluster_ff632fdbdfbcf4bb72a8a9b65d3b96e7);
+        
+    
+        var popup_07b3a40e44ed8d3a72e727433298f655 = L.popup({"maxWidth": 350});
+
+        
+            var html_d4e7d9932247638ec5b6f0615d075c9c = $(`<div id="html_d4e7d9932247638ec5b6f0615d075c9c" style="width: 100.0%; height: 100.0%;">     <b>Permit:</b> 063-29883<br>     <b>Spud Date:</b> 01/01/1800<br>     <b>Total Production:</b> 79113.84<br>     <div style='max-height:150px;overflow-y:auto;'><ul><li>12/31/1993 | OHM | BELDE | 7324.0</li><li>12/31/1996 | OHM | PENTE | 4764.0</li><li>12/31/1997 | OHM | PENTE | 6563.0</li><li>12/31/1998 | OHM | PENTE | 6088.0</li><li>12/31/1999 | OHM | PENTE | 4278.0</li><li>12/31/2000 | OHM | PENTE | 3801.0</li><li>12/31/2001 | OHM | PENTE | 3309.0</li><li>12/31/2002 | OHM | PENTE | 3029.0</li><li>12/31/2003 | OHM | PENTE | 2966.0</li><li>12/31/2004 | OHM | LINN  | 294.32</li><li>12/31/2006 | OHM | LINN  | 3379.0</li><li>12/31/2007 | OHM | LINN  | 2377.0</li><li>12/31/2008 | OHM | XTO E | 2597.0</li><li>12/31/2009 | OHM | XTO E | 2619.0</li><li>12/31/2010 | OHM 24 | XTO E | 1877.0</li><li>12/31/2011 | OHM 24 | XTO E | 2090.0</li><li>12/31/2012 | OHM 24 | XTO E | 1607.0</li><li>12/31/2013 | OHM 24 | XTO E | 1658.0</li><li>12/31/2014 | OHM 24 | XTO E | 315.0</li><li>12/31/2015 | OHM 24 | XTO E | 1774.0</li><li>12/31/2016 | OHM 24 | XTO E | 2859.0</li><li>12/31/2017 | OHM 24 | DIVER | 744.0</li><li>12/31/2018 | OHM 24 | DIVER | 1382.0</li><li>12/31/2019 | OHM 24 | DIVER | 1539.0</li><li>12/31/2020 | OHM 24 | DIVER | 2088.0</li><li>12/31/2021 | OHM 24 | DIVER | 2415.95</li><li>12/31/2022 | OHM 24 | DIVER | 2266.7</li><li>12/31/2023 | OHM 24 | DIVER | 1705.62</li><li>12/31/2024 | OHM 24 | DIVER | 1404.25</li></ul></div>     </div>`)[0];
+            popup_07b3a40e44ed8d3a72e727433298f655.setContent(html_d4e7d9932247638ec5b6f0615d075c9c);
+        
+
+        marker_f49c21c78dcb0c94256667dfbd92e156.bindPopup(popup_07b3a40e44ed8d3a72e727433298f655)
+        ;
+
+        
+    
+    
+            var marker_196b7388982cd902885beb513a437db7 = L.marker(
+                [40.553787, -79.113341],
+                {}
+            ).addTo(marker_cluster_ff632fdbdfbcf4bb72a8a9b65d3b96e7);
+        
+    
+        var popup_dbae4e701e926597de147f019fc9b49e = L.popup({"maxWidth": 350});
+
+        
+            var html_b52120ed932970f360bad969db9a1394 = $(`<div id="html_b52120ed932970f360bad969db9a1394" style="width: 100.0%; height: 100.0%;">     <b>Permit:</b> 063-29887<br>     <b>Spud Date:</b> nan<br>     <b>Total Production:</b> 5397.0<br>     <div style='max-height:150px;overflow-y:auto;'><ul><li>12/31/1996 | OHM | PENTE | 2396.0</li><li>12/31/1997 | OHM | PENTE | 3001.0</li></ul></div>     </div>`)[0];
+            popup_dbae4e701e926597de147f019fc9b49e.setContent(html_b52120ed932970f360bad969db9a1394);
+        
+
+        marker_196b7388982cd902885beb513a437db7.bindPopup(popup_dbae4e701e926597de147f019fc9b49e)
+        ;
+
+        
+    
+    
+            var marker_fb2f183d09d83a87ff906c39d9ace29b = L.marker(
+                [40.556999, -79.099591],
+                {}
+            ).addTo(marker_cluster_ff632fdbdfbcf4bb72a8a9b65d3b96e7);
+        
+    
+        var popup_f0190d54c36181657b4555e4f81fbba8 = L.popup({"maxWidth": 350});
+
+        
+            var html_ff2d0b6cee1341712a09999fb1000bec = $(`<div id="html_ff2d0b6cee1341712a09999fb1000bec" style="width: 100.0%; height: 100.0%;">     <b>Permit:</b> 063-29944<br>     <b>Spud Date:</b> 01/01/1800<br>     <b>Total Production:</b> 18264.45<br>     <div style='max-height:150px;overflow-y:auto;'><ul><li>12/31/1993 | OHM | RANGE | 183.0</li><li>12/31/1997 | OHM | PENTE | 1260.0</li><li>12/31/1998 | OHM | PENTE | 1561.0</li><li>12/31/1999 | OHM | PENTE | 1097.0</li><li>12/31/2000 | OHM | PENTE | 2444.0</li><li>12/31/2001 | OHM | PENTE | 1927.0</li><li>12/31/2002 | OHM | PENTE | 1986.0</li><li>12/31/2003 | OHM | PENTE | 1612.0</li><li>12/31/2004 | OHM | LINN  | 136.0</li><li>12/31/2005 | OHM | LINN  | nan</li><li>12/31/2006 | OHM | LINN  | 830.0</li><li>12/31/2007 | OHM | LINN  | 178.0</li><li>12/31/2008 | OHM | XTO E | 363.0</li><li>12/31/2009 | OHM | XTO E | 760.0</li><li>12/31/2010 | OHM 14 | XTO E | 643.0</li><li>12/31/2011 | OHM 14 | XTO E | 639.0</li><li>12/31/2012 | OHM 14 | XTO E | 184.0</li><li>12/31/2013 | OHM 14 | XTO E | 268.0</li><li>12/31/2014 | OHM 14 | XTO E | 34.0</li><li>12/31/2015 | OHM 14 | XTO E | 111.0</li><li>12/31/2016 | OHM 14 | XTO E | 95.0</li><li>12/31/2017 | OHM 14 | DIVER | 5.0</li><li>12/31/2018 | OHM 14 | DIVER | 63.0</li><li>12/31/2019 | OHM 14 | DIVER | 186.0</li><li>12/31/2020 | OHM 14 | DIVER | 711.0</li><li>12/31/2021 | OHM 14 | DIVER | 262.95</li><li>12/31/2022 | OHM 14 | DIVER | 127.5</li><li>12/31/2023 | OHM 14 | DIVER | 276.94</li><li>12/31/2024 | OHM 14 | DIVER | 321.06</li></ul></div>     </div>`)[0];
+            popup_f0190d54c36181657b4555e4f81fbba8.setContent(html_ff2d0b6cee1341712a09999fb1000bec);
+        
+
+        marker_fb2f183d09d83a87ff906c39d9ace29b.bindPopup(popup_f0190d54c36181657b4555e4f81fbba8)
+        ;
+
+        
+    
+    
+            var marker_3ca2dc5aa9694b9c0210df772409e4b6 = L.marker(
+                [40.535288, -79.096167],
+                {}
+            ).addTo(marker_cluster_ff632fdbdfbcf4bb72a8a9b65d3b96e7);
+        
+    
+        var popup_32f6df4f6eb0fa5e076714770d81c843 = L.popup({"maxWidth": 350});
+
+        
+            var html_5f123f7f825764002641b7388d766fec = $(`<div id="html_5f123f7f825764002641b7388d766fec" style="width: 100.0%; height: 100.0%;">     <b>Permit:</b> 063-29980<br>     <b>Spud Date:</b> 01/01/1800<br>     <b>Total Production:</b> 619.0<br>     <div style='max-height:150px;overflow-y:auto;'><ul><li>12/31/1995 | OHM | LEASU | nan</li><li>12/31/1996 | OHM | PENTE | 0.0</li><li>12/31/1997 | OHM | PENTE | 0.0</li><li>12/31/1999 | OHM | PENTE | nan</li><li>12/31/2000 | OHM | PENTE | nan</li><li>12/31/2003 | OHM | PENTE | 0.0</li><li>12/31/2005 | OHM | LUCER | 0.0</li><li>12/31/2006 | OHM | EXOTI | nan</li><li>12/31/2007 | OHM | EXOTI | 410.0</li><li>12/31/2008 | OHM | CHRIS | 209.0</li><li>12/31/2009 | OHM | CHRIS | nan</li><li>12/31/2010 | OHM 28 | CHRIS | nan</li><li>12/31/2011 | OHM 28 | CHRIS | nan</li><li>12/31/2012 | OHM 28 | CHRIS | nan</li><li>12/31/2013 | OHM 28 | CHRIS | nan</li><li>12/31/2014 | OHM 28 | CHRIS | nan</li><li>12/31/2015 | OHM 28 | CHRIS | nan</li><li>12/31/2016 | OHM 28 | CHRIS | nan</li><li>12/31/2017 | OHM 28 | CHRIS | nan</li><li>12/31/2018 | OHM 28 | CHRIS | nan</li><li>12/31/2019 | OHM 28 | CHRIS | nan</li><li>12/31/2020 | OHM 28 | CHRIS | nan</li><li>12/31/2021 | OHM 28 | CHRIS | nan</li><li>12/31/2022 | OHM 28 | CHRIS | nan</li><li>12/31/2023 | OHM 28 | CHRIS | nan</li><li>12/31/2024 | OHM 28 | CHRIS | nan</li></ul></div>     </div>`)[0];
+            popup_32f6df4f6eb0fa5e076714770d81c843.setContent(html_5f123f7f825764002641b7388d766fec);
+        
+
+        marker_3ca2dc5aa9694b9c0210df772409e4b6.bindPopup(popup_32f6df4f6eb0fa5e076714770d81c843)
+        ;
+
+        
+    
+    
+            var marker_515d7b02638b0752078954c62998d7e2 = L.marker(
+                [40.549725, -79.095666],
+                {}
+            ).addTo(marker_cluster_ff632fdbdfbcf4bb72a8a9b65d3b96e7);
+        
+    
+        var popup_d1443174bd556239518a006ff2dffdbf = L.popup({"maxWidth": 350});
+
+        
+            var html_c2cae407694cc98570586109d5733ee9 = $(`<div id="html_c2cae407694cc98570586109d5733ee9" style="width: 100.0%; height: 100.0%;">     <b>Permit:</b> 063-31830<br>     <b>Spud Date:</b> 08/04/1997<br>     <b>Total Production:</b> 83267.27<br>     <div style='max-height:150px;overflow-y:auto;'><ul><li>12/31/1997 | OHM | PENTE | 14486.0</li><li>12/31/1998 | OHM | PENTE | 17309.0</li><li>12/31/1999 | OHM | PENTE | 7667.0</li><li>12/31/2000 | OHM | PENTE | 6495.0</li><li>12/31/2001 | OHM | PENTE | 4161.0</li><li>12/31/2002 | OHM | PENTE | 3163.0</li><li>12/31/2003 | OHM | PENTE | 2924.0</li><li>12/31/2004 | OHM | LINN  | 122.8</li><li>12/31/2005 | OHM | LINN  | nan</li><li>12/31/2006 | OHM | LINN  | 2428.0</li><li>12/31/2007 | OHM | LINN  | 2959.0</li><li>12/31/2008 | OHM | XTO E | 1881.0</li><li>12/31/2009 | OHM | XTO E | 2810.0</li><li>12/31/2010 | OHM (TRACT #8) 31 | XTO E | 1587.0</li><li>12/31/2011 | OHM (TRACT #8) 31 | XTO E | 650.0</li><li>12/31/2012 | OHM (TRACT #8) 31 | XTO E | 1110.0</li><li>12/31/2013 | OHM (TRACT #8) 31 | XTO E | 863.0</li><li>12/31/2014 | OHM (TRACT #8) 31 | XTO E | 267.0</li><li>12/31/2015 | OHM (TRACT #8) 31 | XTO E | 1621.0</li><li>12/31/2016 | OHM (TRACT #8) 31 | XTO E | 1674.0</li><li>12/31/2017 | OHM (TRACT #8) 31 | DIVER | 522.0</li><li>12/31/2018 | OHM (TRACT #8) 31 | DIVER | 778.0</li><li>12/31/2019 | OHM (TRACT #8) 31 | DIVER | 846.0</li><li>12/31/2020 | OHM (TRACT #8) 31 | DIVER | 1793.0</li><li>12/31/2021 | OHM (TRACT #8) 31 | DIVER | 1080.68</li><li>12/31/2022 | OHM (TRACT #8) 31 | DIVER | 1413.69</li><li>12/31/2023 | OHM (TRACT #8) 31 | DIVER | 1139.72</li><li>12/31/2024 | OHM (TRACT #8) 31 | DIVER | 1516.38</li></ul></div>     </div>`)[0];
+            popup_d1443174bd556239518a006ff2dffdbf.setContent(html_c2cae407694cc98570586109d5733ee9);
+        
+
+        marker_515d7b02638b0752078954c62998d7e2.bindPopup(popup_d1443174bd556239518a006ff2dffdbf)
+        ;
+
+        
+    
+    
+            var marker_1e22ccb6af07532fb634b4b8dbd6a6b3 = L.marker(
+                [40.54826, -79.100014],
+                {}
+            ).addTo(marker_cluster_ff632fdbdfbcf4bb72a8a9b65d3b96e7);
+        
+    
+        var popup_00339fe586f5e65a0192d748c2871a31 = L.popup({"maxWidth": 350});
+
+        
+            var html_c4b8aba8503f95f962a413b7f3513b85 = $(`<div id="html_c4b8aba8503f95f962a413b7f3513b85" style="width: 100.0%; height: 100.0%;">     <b>Permit:</b> 063-32045<br>     <b>Spud Date:</b> 01/01/1800<br>     <b>Total Production:</b> 83339.28000000001<br>     <div style='max-height:150px;overflow-y:auto;'><ul><li>12/31/1998 | PENTEX | PENTE | 1537.0</li><li>12/31/1999 | PENTEX | PENTE | 10468.0</li><li>12/31/2000 | PENTEX | PENTE | 9181.0</li><li>12/31/2001 | PENTEX | PENTE | 6321.0</li><li>12/31/2002 | PENTEX (FINDLEY) | PENTE | 6257.0</li><li>12/31/2003 | PENTEX (FINDLEY) | PENTE | 4678.0</li><li>12/31/2004 | PENTEX (FINDLEY) | LINN  | 429.3</li><li>12/31/2005 | PENTEX (FINDLEY) | LINN  | nan</li><li>12/31/2006 | PENTEX (FINDLEY) | LINN  | 4221.0</li><li>12/31/2007 | PENTEX (FINDLEY) | LINN  | 3663.0</li><li>12/31/2008 | PENTEX (FINDLEY) | XTO E | 2832.0</li><li>12/31/2009 | PENTEX (FINDLEY) | XTO E | 2974.0</li><li>12/31/2010 | PENTEX (FINDLEY) 1 | XTO E | 2979.0</li><li>12/31/2011 | PENTEX (FINDLEY) 1 | XTO E | 2944.0</li><li>12/31/2012 | PENTEX (FINDLEY) 1 | XTO E | 2591.0</li><li>12/31/2013 | PENTEX (FINDLEY) 1 | XTO E | 2742.0</li><li>12/31/2014 | PENTEX (FINDLEY) 1 | XTO E | 437.0</li><li>12/31/2015 | PENTEX (FINDLEY) 1 | XTO E | 2718.0</li><li>12/31/2016 | PENTEX (FINDLEY) 1 | XTO E | 2492.0</li><li>12/31/2017 | PENTEX (FINDLEY) 1 | DIVER | 703.0</li><li>12/31/2018 | PENTEX (FINDLEY) 1 | DIVER | 1151.0</li><li>12/31/2019 | PENTEX (FINDLEY) 1 | DIVER | 1025.0</li><li>12/31/2020 | PENTEX (FINDLEY) 1 | DIVER | 2430.0</li><li>12/31/2021 | PENTEX (FINDLEY) 1 | DIVER | 2362.21</li><li>12/31/2022 | PENTEX (FINDLEY) 1 | DIVER | 2408.89</li><li>12/31/2023 | PENTEX (FINDLEY) 1 | DIVER | 2168.06</li><li>12/31/2024 | PENTEX (FINDLEY) 1 | DIVER | 1626.82</li></ul></div>     </div>`)[0];
+            popup_00339fe586f5e65a0192d748c2871a31.setContent(html_c4b8aba8503f95f962a413b7f3513b85);
+        
+
+        marker_1e22ccb6af07532fb634b4b8dbd6a6b3.bindPopup(popup_00339fe586f5e65a0192d748c2871a31)
+        ;
+
+        
+    
+    
+            var marker_c94c62eed9b0c4c1d4eede612b868868 = L.marker(
+                [40.552676, -79.093687],
+                {}
+            ).addTo(marker_cluster_ff632fdbdfbcf4bb72a8a9b65d3b96e7);
+        
+    
+        var popup_cc5c4318e7c0f87047e2c187bb47f3f2 = L.popup({"maxWidth": 350});
+
+        
+            var html_64d9607c7f9e34cd4040fe5129f61daa = $(`<div id="html_64d9607c7f9e34cd4040fe5129f61daa" style="width: 100.0%; height: 100.0%;">     <b>Permit:</b> 063-32048<br>     <b>Spud Date:</b> 01/01/1800<br>     <b>Total Production:</b> 70596.17<br>     <div style='max-height:150px;overflow-y:auto;'><ul><li>12/31/1998 | OHM | PENTE | 26940.0</li><li>12/31/1999 | OHM | PENTE | 16203.0</li><li>12/31/2003 | OHM | PENTE | 5343.0</li><li>12/31/2004 | OHM | LINN  | 431.33</li><li>12/31/2004 | OHM | PENTE | nan</li><li>12/31/2005 | OHM | LINN  | nan</li><li>12/31/2008 | OHM | XTO E | 2948.0</li><li>12/31/2009 | OHM | XTO E | 2439.0</li><li>12/31/2010 | OHM TRACT 8 39 | XTO E | 654.0</li><li>12/31/2011 | OHM TRACT 8 39 | XTO E | 1875.0</li><li>12/31/2012 | OHM TRACT 8 39 | XTO E | 937.0</li><li>12/31/2013 | OHM TRACT 8 39 | XTO E | 1480.0</li><li>12/31/2014 | OHM TRACT 8 39 | XTO E | 305.0</li><li>12/31/2015 | OHM TRACT 8 39 | XTO E | 167.0</li><li>12/31/2016 | OHM TRACT 8 39 | XTO E | 140.0</li><li>12/31/2017 | OHM TRACT 8 39 | DIVER | 93.0</li><li>12/31/2018 | OHM TRACT 8 39 | DIVER | 28.0</li><li>12/31/2019 | OHM TRACT 8 39 | DIVER | 529.0</li><li>12/31/2020 | OHM TRACT 8 39 | DIVER | 2944.0</li><li>12/31/2021 | OHM TRACT 8 39 | DIVER | 2013.31</li><li>12/31/2022 | OHM TRACT 8 39 | DIVER | 1968.5</li><li>12/31/2023 | OHM TRACT 8 39 | DIVER | 1581.24</li><li>12/31/2024 | OHM TRACT 8 39 | DIVER | 1576.79</li></ul></div>     </div>`)[0];
+            popup_cc5c4318e7c0f87047e2c187bb47f3f2.setContent(html_64d9607c7f9e34cd4040fe5129f61daa);
+        
+
+        marker_c94c62eed9b0c4c1d4eede612b868868.bindPopup(popup_cc5c4318e7c0f87047e2c187bb47f3f2)
+        ;
+
+        
+    
+    
+            var marker_33e72f5f559c2aa2a0526a5f6db10957 = L.marker(
+                [40.555833, -79.092861],
+                {}
+            ).addTo(marker_cluster_ff632fdbdfbcf4bb72a8a9b65d3b96e7);
+        
+    
+        var popup_59ad12c203e927bbb47e68d4ac5ebfe4 = L.popup({"maxWidth": 350});
+
+        
+            var html_3e61d071d1aad8a4fd56434b6c20b413 = $(`<div id="html_3e61d071d1aad8a4fd56434b6c20b413" style="width: 100.0%; height: 100.0%;">     <b>Permit:</b> 063-32066<br>     <b>Spud Date:</b> 01/01/1800<br>     <b>Total Production:</b> 128480.41<br>     <div style='max-height:150px;overflow-y:auto;'><ul><li>12/31/1998 | OHM | PENTE | 23031.0</li><li>12/31/1999 | OHM | PENTE | 22611.0</li><li>12/31/2000 | OHM | PENTE | 15493.0</li><li>12/31/2001 | OHM | PENTE | 9414.0</li><li>12/31/2002 | OHM | PENTE | 8877.0</li><li>12/31/2003 | OHM | PENTE | 7302.0</li><li>12/31/2004 | OHM | LINN  | 588.64</li><li>12/31/2005 | OHM | LINN  | nan</li><li>12/31/2006 | OHM | LINN  | 6984.0</li><li>12/31/2007 | OHM | LINN  | 4781.0</li><li>12/31/2008 | OHM | XTO E | 4170.0</li><li>12/31/2009 | OHM | XTO E | 4151.0</li><li>12/31/2010 | OHM (TRACT 11) 41 | XTO E | 2621.0</li><li>12/31/2011 | OHM (TRACT 11) 41 | XTO E | 2256.0</li><li>12/31/2012 | OHM (TRACT 11) 41 | XTO E | 1827.0</li><li>12/31/2013 | OHM (TRACT 11) 41 | XTO E | 1810.0</li><li>12/31/2014 | OHM (TRACT 11) 41 | XTO E | 198.0</li><li>12/31/2015 | OHM (TRACT 11) 41 | XTO E | 1685.0</li><li>12/31/2016 | OHM (TRACT 11) 41 | XTO E | 1560.0</li><li>12/31/2017 | OHM (TRACT 11) 41 | DIVER | 532.0</li><li>12/31/2018 | OHM (TRACT 11) 41 | DIVER | 862.0</li><li>12/31/2019 | OHM (TRACT 11) 41 | DIVER | 579.0</li><li>12/31/2020 | OHM (TRACT 11) 41 | DIVER | 1410.0</li><li>12/31/2021 | OHM (TRACT 11) 41 | DIVER | 1641.32</li><li>12/31/2022 | OHM (TRACT 11) 41 | DIVER | 1558.22</li><li>12/31/2023 | OHM (TRACT 11) 41 | DIVER | 1566.23</li><li>12/31/2024 | OHM (TRACT 11) 41 | DIVER | 972.0</li></ul></div>     </div>`)[0];
+            popup_59ad12c203e927bbb47e68d4ac5ebfe4.setContent(html_3e61d071d1aad8a4fd56434b6c20b413);
+        
+
+        marker_33e72f5f559c2aa2a0526a5f6db10957.bindPopup(popup_59ad12c203e927bbb47e68d4ac5ebfe4)
+        ;
+
+        
+    
+</script>
+</html>
